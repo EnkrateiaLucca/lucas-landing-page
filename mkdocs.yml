@@ -1,0 +1,5 @@
+site_name: Lucas Boss Landing Page
+nav:
+  - Home: index.md
+  - About: about-me.md
+theme: readthedocs
