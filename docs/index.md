@@ -1,17 +1,8 @@
-# Welcome to MkDocs
+# Sup Folks!
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+I'm an AI Engineer, and [AI instructor at O'Reilly Media](https://learning.oreilly.com/live-events/getting-started-with-langgraph/0642572005882/), I like writing about building cool tools. 
+A few years ago, after spending some time as a research assistant at the [Champalimaud Foundation](https://www.fchampalimaud.org/) I pivoted to industry and started working as an AI engineer, and now I help people develop AI models, tools, and all sorts of fun stuff.
 
-## Commands
+From time to time I also do some [neat workshops](https://odsc.com/blog/speaker/lucas-soares/) about stuff I find interesting in AI.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+[Subscribe to my Newsletter](https://automata-learning-lab.kit.com/ccd5287996){ .md-button .md-button--primary }
