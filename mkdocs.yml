@@ -1,6 +1,15 @@
 site_name: Lucas Soares
+repo_url: https://github.com/EnkrateiaLucca/lucas-landing-page.git
+# site_url: https://lbns.co
+
 nav:
   - Home: index.md
+  - Writing:
+    - posts/article-browser-automation-workflow.md
+
+plugins:
+  - blog
+  - search
 
 extra_css:
   - style.css
@@ -8,7 +17,15 @@ extra_css:
 theme:
   name: material
   nav_style: dark
+  palette:
+    primary: black
   user_color_mode_toggle: true
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - search.suggest
+    - search.highlight
 
 markdown_extensions:
   - abbr
