@@ -5,7 +5,12 @@ repo_url: https://github.com/EnkrateiaLucca/lucas-landing-page.git
 nav:
   - Home: index.md
   - Writing:
-    - posts/article-browser-automation-workflow.md
+    - posts/llm-usage-general-tips.md
+    - posts/patterns-for-llm-usage.md
+    - posts/intuitive-introduction-to-langgraph.md
+    # - posts/2025-02-11-blog-post-1.md
+    - posts/2025-02-16-blog-post-2.md
+    - posts/2025-03-08-blog-post-3.md
 
 plugins:
   - blog
