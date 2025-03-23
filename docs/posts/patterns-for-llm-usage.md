@@ -46,6 +46,24 @@ desirable output, format, etc.... then make a prompt template that
 produces the data into the format acceptable 
 by that app (done).  
 
+**Conceptual Knowledge Prompting**
+
+When creating knowledge management prompts (like for Anki cards), structure them around these 5 key dimensions:
+- Attributes & tendencies
+- Similarities and differences
+- Parts & Wholes
+- Causes & Effects
+- Significance & Implications
+
+This helps move beyond simple memorization towards deeper encoding of knowledge.
+
+**Background AI Assistance**
+
+Run lighter models (Tier 3) in the background to provide gentle guidance without disrupting workflow. For example:
+- Watching note creation to suggest knowledge structuring patterns
+- Using SuperWhisper to transform free-form thinking into structured content
+- Converting audio brainstorming into written documentation
+
 ## Patterns for Prompt Templates
 
 **Informed transformation** 
