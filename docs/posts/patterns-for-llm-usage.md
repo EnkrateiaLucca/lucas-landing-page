@@ -83,7 +83,7 @@ Prime model at the very end to:
 Use prompts for prompts! Create a prompt that uses a model to 
 generate multiple prompts that address all the parts of your task.
 
-![](2025-02-02-13-04-00.png)
+![](../assets/2025-02-02-13-04-00.png)
 
 For example:
 

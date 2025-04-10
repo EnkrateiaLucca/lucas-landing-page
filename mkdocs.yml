@@ -11,6 +11,8 @@ nav:
     - posts/2025-02-16-blog-post-2.md
     - posts/2025-03-08-blog-post-3.md
     - posts/2025-03-22-ai-tools-life-thoughts-2025.md
+    - posts/2025-03-23-reasoning-models,-when-to-use-them?-what-are-they-good-for?.md
+    - posts/2025-04-10-agents-planning-eval-ai-index-reports.md
 
 plugins:
   - blog

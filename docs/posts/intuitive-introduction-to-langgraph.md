@@ -11,7 +11,7 @@ I'm working on my [LangGraph](https://www.langchain.com/langgraph) course and I 
 
 When working with LLMs, one common pattern that exists is to [route stuff](https://arc.net/l/quote/yrhkgldc), meaning you send some input to an LLM and the output of that gets routed to either another LLM as described in this [article by Anthropic about common patterns for working with LLMs](https://arc.net/l/quote/yrhkgldc) or even to some other functionality like you might use some Python function to clean the output of that LLM.  
 
-![](2025-02-07-14-52-03.png)
+![](../assets/2025-02-07-14-52-03.png)
 
 This is great because the LLM has some type of understanding of what is going on even though we still don't really understand the nature of this understanding, however it is good enough that we can actually use it to make some processing pipeline a bit leaner by having LLMs make certain decisions within some narrow scopes of a workflow.
 
@@ -30,7 +30,7 @@ So that begs the question of how we create useful abstractions around the capabi
 
 To understand that, we need to understand what we are trying to abstract, for that, let's take the most common pattern in this emerging field of Agents that is growing quite a bit this year: [React](https://arxiv.org/pdf/2210.03629) [Agent](https://www.promptingguide.ai/research/llm-agents).
 
-![](2025-02-07-15-12-24.png)
+![](../assets/2025-02-07-15-12-24.png)
 
 What is there to abstract?
 
@@ -42,7 +42,7 @@ Well, a bunch of stuff, if want to be able to develop a system aroud these thing
 
 and much more (see diagram below).
 
-![](2025-02-07-15-29-36.png)
+![](../assets/2025-02-07-15-29-36.png)
 
 Not only that, but we also want to be able to track and monitor these parts so that when problems occured we can investigate what happen and debug our system across all of its parts.
 
@@ -54,7 +54,7 @@ In LangChain everything is a [runnable](https://python.langchain.com/api_referen
 
 The idea is that you can create `chains` which in LangChain are building blocks made out of the component parts like [`prompt template`](https://python.langchain.com/docs/concepts/prompt_templates/) [`chat models`](https://python.langchain.com/docs/concepts/chat_models/) and [many others](https://python.langchain.com/docs/integrations/components/), in order to create modular workflows that have swappable parts.
 
-![](2025-02-07-15-50-48.png)
+![](../assets/2025-02-07-15-50-48.png)
 
 LangChain became extremely popular I think in part because they were the first to realize that there was much more value to be extracted from LLMs than just asking them for text and getting results back, building on top of super important papers that started to explore these additional functionalities like:
 
@@ -85,7 +85,7 @@ however, when it comes to putting together a system, connecting different things
 
 So LangGraph shows up as a framework that can take in the standardization provided by operating on LangChain Components, and provide the graph building capabilities that are considerably more intuitive when compared to 'chaining runnables'.
 
-![](2025-02-07-16-20-06.png)
+![](../assets/2025-02-07-16-20-06.png)
 
 In LangGraph you introduce [cycles](https://blog.langchain.dev/langgraph/) into these chains, in the form of 'controlled flows' or 'state machines':
 
@@ -198,7 +198,7 @@ except Exception:
     print("Did not display graph")
     pass
 ```
-![](../assets/react-agent-graph.jpeg)
+![](../assets/../assets/react-agent-graph.jpeg)
 
 
 Looks pretty simple right? But now, we can actually have it look up information online and return written results!
