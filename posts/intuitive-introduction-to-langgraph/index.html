@@ -559,6 +559,48 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2025-03-23-reasoning-models%2C-when-to-use-them%3F-what-are-they-good-for%3F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reasoning Models, When to Use Them? What Are They Good for?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2025-04-10-agents-planning-eval-ai-index-reports/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agents, Planning, Evaluation and AI Index Reports 2025
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -592,7 +634,7 @@ date: 2025-02-10</p>
 <h2 id="routing-stuff">Routing Stuff<a class="headerlink" href="#routing-stuff" title="Permanent link">&para;</a></h2>
 <p>I'm working on my <a href="https://www.langchain.com/langgraph">LangGraph</a> course and I kind of wanted to do a little recap of how I see this framework in the big scheme of things.</p>
 <p>When working with LLMs, one common pattern that exists is to <a href="https://arc.net/l/quote/yrhkgldc">route stuff</a>, meaning you send some input to an LLM and the output of that gets routed to either another LLM as described in this <a href="https://arc.net/l/quote/yrhkgldc">article by Anthropic about common patterns for working with LLMs</a> or even to some other functionality like you might use some Python function to clean the output of that LLM.  </p>
-<p><img alt="" src="../2025-02-07-14-52-03.png" /></p>
+<p><img alt="" src="../../assets/2025-02-07-14-52-03.png" /></p>
 <p>This is great because the LLM has some type of understanding of what is going on even though we still don't really understand the nature of this understanding, however it is good enough that we can actually use it to make some processing pipeline a bit leaner by having LLMs make certain decisions within some narrow scopes of a workflow.</p>
 <h2 id="the-abstraction-challenge">The Abstraction Challenge<a class="headerlink" href="#the-abstraction-challenge" title="Permanent link">&para;</a></h2>
 <p>Now, if I am writing up a system that can perform complex tasks, </p>
@@ -604,7 +646,7 @@ date: 2025-02-10</p>
 <p>What I mean is that despite wanting the flexibility brought by LLMs, we also want the controllability offered by writing software that does stuff deterministically and can be systematically improved over time.</p>
 <p>So that begs the question of how we create useful abstractions around the capabilities of <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g">Large Language Models</a>? </p>
 <p>To understand that, we need to understand what we are trying to abstract, for that, let's take the most common pattern in this emerging field of Agents that is growing quite a bit this year: <a href="https://arxiv.org/pdf/2210.03629">React</a> <a href="https://www.promptingguide.ai/research/llm-agents">Agent</a>.</p>
-<p><img alt="" src="../2025-02-07-15-12-24.png" /></p>
+<p><img alt="" src="../../assets/2025-02-07-15-12-24.png" /></p>
 <p>What is there to abstract?</p>
 <p>Well, a bunch of stuff, if want to be able to develop a system aroud these things we need to be able to abtract things like:</p>
 <ol>
@@ -613,13 +655,13 @@ date: 2025-02-10</p>
 <li>Integrating tools into LLMs as functions that call external APIs</li>
 </ol>
 <p>and much more (see diagram below).</p>
-<p><img alt="" src="../2025-02-07-15-29-36.png" /></p>
+<p><img alt="" src="../../assets/2025-02-07-15-29-36.png" /></p>
 <p>Not only that, but we also want to be able to track and monitor these parts so that when problems occured we can investigate what happen and debug our system across all of its parts.</p>
 <h2 id="langchain">LangChain<a class="headerlink" href="#langchain" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.langchain.com/">LangChain</a> came into the scene as a framework that allowed you to put all these different parts that are common when building LLM apps, into the same 'system'. </p>
 <p>In LangChain everything is a <a href="https://python.langchain.com/api_reference/core/runnables/langchain_core.runnables.base.Runnable.html">runnable</a>, which means, things like calling an LLM, calling a tool that performs some action, the prompt that you send to the model, and many other things like that become all components in this runnable interface that can be organized via the usage of a declarative language called <a href="https://python.langchain.com/docs/concepts/lcel/">LCEL (LangChain Expression Language)</a>.</p>
 <p>The idea is that you can create <code>chains</code> which in LangChain are building blocks made out of the component parts like <a href="https://python.langchain.com/docs/concepts/prompt_templates/"><code>prompt template</code></a> <a href="https://python.langchain.com/docs/concepts/chat_models/"><code>chat models</code></a> and <a href="https://python.langchain.com/docs/integrations/components/">many others</a>, in order to create modular workflows that have swappable parts.</p>
-<p><img alt="" src="../2025-02-07-15-50-48.png" /></p>
+<p><img alt="" src="../../assets/2025-02-07-15-50-48.png" /></p>
 <p>LangChain became extremely popular I think in part because they were the first to realize that there was much more value to be extracted from LLMs than just asking them for text and getting results back, building on top of super important papers that started to explore these additional functionalities like:</p>
 <ul>
 <li><a href="https://arxiv.org/abs/2302.04761">Toolformer: Language Models Can Teach Themselves to Use Tools</a></li>
@@ -642,7 +684,7 @@ with LLMs like:</p>
 </ul>
 <p>however, when it comes to putting together a system, connecting different things and managing all of that, the LCEL comes short of something simple and intuitive that can give you manageable complexity and controlability.</p>
 <p>So LangGraph shows up as a framework that can take in the standardization provided by operating on LangChain Components, and provide the graph building capabilities that are considerably more intuitive when compared to 'chaining runnables'.</p>
-<p><img alt="" src="../2025-02-07-16-20-06.png" /></p>
+<p><img alt="" src="../../assets/2025-02-07-16-20-06.png" /></p>
 <p>In LangGraph you introduce <a href="https://blog.langchain.dev/langgraph/">cycles</a> into these chains, in the form of 'controlled flows' or 'state machines':</p>
 <blockquote>
 <p><em><a href="https://blog.langchain.dev/langgraph/#:~:text=LangGraph%20is%20a%20way%20to%20create%20these%20state%20machines%20by%20specifying%20them%20as%20graphs.">LangGraph is a way to create these state machines by specifying them as graphs.</a></em></p>

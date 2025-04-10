@@ -1,0 +1,983 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../2025-03-22-ai-tools-life-thoughts-2025/">
+      
+      
+        <link rel="next" href="../2025-04-10-agents-planning-eval-ai-index-reports/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>Reasoning Models, When to Use Them? What Are They Good for? - Lucas Soares</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a40c8224.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../style.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#whats-a-reasoning-model" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Lucas Soares" class="md-header__button md-logo" aria-label="Lucas Soares" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lucas Soares
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reasoning Models, When to Use Them? What Are They Good for?
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/EnkrateiaLucca/lucas-landing-page.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../llm-usage-general-tips/" class="md-tabs__link">
+          
+  
+  Writing
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Lucas Soares" class="md-nav__button md-logo" aria-label="Lucas Soares" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Lucas Soares
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/EnkrateiaLucca/lucas-landing-page.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Writing
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Writing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../llm-usage-general-tips/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Tips on Using LLMs Effectively
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns-for-llm-usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Patterns for LLM Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intuitive-introduction-to-langgraph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intuitive introduction to langgraph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2025-02-16-blog-post-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using AI To Build Practice
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2025-03-08-blog-post-3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    An Audio-based AI-co-writing workflow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2025-03-22-ai-tools-life-thoughts-2025/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI Tools Life Thoughts 2025
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Reasoning Models, When to Use Them? What Are They Good for?
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Reasoning Models, When to Use Them? What Are They Good for?
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#whats-a-reasoning-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's a Reasoning Model?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-we-know-theyre-better" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do we Know they're Better?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#which-models-we-can-officially-call-reasoning-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Which Models we can officially call Reasoning Models?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-should-you-use-reasoning-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      When Should You Use Reasoning Models?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="When Should You Use Reasoning Models?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-complex-problem-solving" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Complex Problem-Solving
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-code-generation-and-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Code Generation and Analysis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-high-stakes-decision-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. High-Stakes Decision Support
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-educational-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Educational Applications
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-traditional-llms-might-be-better" class="md-nav__link">
+    <span class="md-ellipsis">
+      When Traditional LLMs Might Be Better
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-performance-latency-trade-off" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Performance-Latency Trade-off
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-prompt-reasoning-models-effectively" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Prompt Reasoning Models Effectively
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cost-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Cost Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-latency-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Latency Handling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-hybrid-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Hybrid Architectures
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-the-role-of-distilled-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. The Role of Distilled Models
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-future-of-reasoning-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Future of Reasoning Models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2025-04-10-agents-planning-eval-ai-index-reports/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agents, Planning, Evaluation and AI Index Reports 2025
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Reasoning Models, When to Use Them? What Are They Good for?</h1>
+
+<h2 id="whats-a-reasoning-model">What's a Reasoning Model?<a class="headerlink" href="#whats-a-reasoning-model" title="Permanent link">&para;</a></h2>
+<p>I guess I want to start this conversation by defining what a thinking/reasoning model is. The easiest way to define it is that it is a model specially trained and designed for thinking through problems. </p>
+<p>Now, the more elaborate way of going about this definition is to look into the information we have about what differs between these models and the traditional models we are used to like ChatGPT or Claude.</p>
+<details class="notes">
+<summary>How Reasoning models differ from Traditional LLMs</summary>
+<p>Reasoning models differ from traditional LLMs in several key ways:</p>
+<ul>
+<li>
+<p><strong>Computational Approach</strong>: While traditional LLMs generate text in a fixed number of passes and are optimized for efficiency, reasoning models allocate variable computation time based on problem complexity and implement explicit "thinking" phases.</p>
+</li>
+<li>
+<p><strong>Problem-Solving Methods</strong>: Traditional LLMs rely primarily on pattern recognition, while reasoning models utilize explicit step-by-step reasoning processes and show their work through intermediate steps.</p>
+</li>
+<li>
+<p><strong>Training Methodology</strong>: Reasoning models are trained on specialized datasets focused on reasoning tasks and use reinforcement learning with rewards specifically for reasoning quality.</p>
+</li>
+<li>
+<p><strong>Output Characteristics</strong>: Reasoning models produce more structured, methodical responses with explicit verification steps and self-critique, prioritizing logical correctness over natural-sounding language.</p>
+</li>
+<li>
+<p><strong>Chain of Thought (CoT) Processing</strong>: Models like o1 and DeepSeek R1 implement extensive chain-of-thought reasoning, breaking down complex problems into manageable steps before providing answers.</p>
+</li>
+</ul>
+</details>
+<p>The way I like to think about them for the purpose of building stuff with them is this: </p>
+<blockquote>
+<p>It's a model that gives you almost guaranteed better performance at the expense of latency and cost.</p>
+</blockquote>
+<p>So it's essentially a <strong>better yet slower model</strong>. </p>
+<p>I think looking at it from this perspective will help us define a framework for thinking about them effectively.</p>
+<hr />
+<h2 id="how-do-we-know-theyre-better">How do we Know they're Better?<a class="headerlink" href="#how-do-we-know-theyre-better" title="Permanent link">&para;</a></h2>
+<p>Well, if you go to <a href="www.artificialanalysis.ai"> Artificial Analysis </a> and check out their independent evaluation of different models, you will see that their performance against other models for different indexes of capabilities like intelligence (performance in intelligence related tasks) almost always come out on top.</p>
+<p>According to recent benchmarks, reasoning models consistently outperform traditional LLMs on tasks requiring complex logical thinking, mathematical problem-solving, and coding challenges. For example, DeepSeek R1 has demonstrated superior performance on mathematical reasoning compared to many general-purpose models, while Claude 3.7 Sonnet with extended thinking enabled shows remarkable improvements over its standard mode.</p>
+<p>The performance gap is particularly noticeable in:
+- Complex mathematical problems
+- Multi-step logical puzzles
+- Detailed code generation with explanations
+- Step-by-step problem-solving in scientific domains</p>
+<p>However, it's worth noting that this superior performance comes with trade-offs in speed and computational cost, which I'll discuss later.</p>
+<h2 id="which-models-we-can-officially-call-reasoning-models">Which Models we can officially call Reasoning Models?<a class="headerlink" href="#which-models-we-can-officially-call-reasoning-models" title="Permanent link">&para;</a></h2>
+<p>Let's make a little list of the current leading reasoning models:</p>
+<ol>
+<li><strong>Deep Seek R1</strong> - An open-source 671B parameter model that excels in mathematical reasoning and has distilled versions available</li>
+<li><strong>OpenAI o-series models</strong> - Including o1, o1-mini, o1-pro, o3-mini, and o3-mini-high, specifically designed for extended reasoning</li>
+<li><strong>Claude 3.7 Sonnet</strong> - With "extended thinking" mode activated, becoming a hybrid reasoning/general model</li>
+<li><strong>Grok-3</strong> - xAI's latest model with enhanced reasoning capabilities</li>
+<li><strong>Gemini 2.0 Flash/Advanced</strong> - Google's reasoning-focused models</li>
+<li><strong>Sky T-1</strong> - A relatively new Chinese reasoning model from SkyWork</li>
+<li><strong>Baidu's ERNIE 4.0-Reasoning</strong> - Launched in March 2025 as a competitor to DeepSeek R1</li>
+<li><strong>Tencent's T1</strong> - A reasoning model introduced in early 2025</li>
+<li><strong>Llama-3-70B-Instruct</strong> - While not explicitly marketed as a reasoning model, it shows strong reasoning capabilities</li>
+</ol>
+<p>This list is continually growing as more companies release specialized reasoning models to compete in this rapidly evolving space.</p>
+<h2 id="when-should-you-use-reasoning-models">When Should You Use Reasoning Models?<a class="headerlink" href="#when-should-you-use-reasoning-models" title="Permanent link">&para;</a></h2>
+<p>Reasoning models shine in specific scenarios, but they're not always the right choice. Here's my take on when they make sense:</p>
+<h3 id="1-complex-problem-solving">1. Complex Problem-Solving<a class="headerlink" href="#1-complex-problem-solving" title="Permanent link">&para;</a></h3>
+<p>If your use case involves solving intricate problems that require breaking down complex logic into steps, reasoning models are your best bet. They excel at:</p>
+<ul>
+<li>Mathematical challenges</li>
+<li>Logic puzzles</li>
+<li>Scientific reasoning</li>
+<li>Step-by-step explanations</li>
+</ul>
+<h3 id="2-code-generation-and-analysis">2. Code Generation and Analysis<a class="headerlink" href="#2-code-generation-and-analysis" title="Permanent link">&para;</a></h3>
+<p>For software development tasks requiring thoughtful analysis, reasoning models offer significant advantages:</p>
+<ul>
+<li>Writing complex algorithms</li>
+<li>Debugging with systematic approaches</li>
+<li>Explaining code behavior comprehensively</li>
+<li>Architecture design with logical justification</li>
+</ul>
+<h3 id="3-high-stakes-decision-support">3. High-Stakes Decision Support<a class="headerlink" href="#3-high-stakes-decision-support" title="Permanent link">&para;</a></h3>
+<p>When accuracy and reliability are paramount:</p>
+<ul>
+<li>Financial analysis where errors could be costly</li>
+<li>Medical reasoning requiring careful consideration</li>
+<li>Legal analysis with logical chains of thought</li>
+<li>Risk assessment requiring thorough evaluation</li>
+</ul>
+<h3 id="4-educational-applications">4. Educational Applications<a class="headerlink" href="#4-educational-applications" title="Permanent link">&para;</a></h3>
+<p>For tools designed to teach or explain complex topics:</p>
+<ul>
+<li>Tutorial systems requiring step-by-step instruction</li>
+<li>Math problem solving with shown work</li>
+<li>Scientific concept explanations</li>
+<li>Knowledge exploration with logical connections</li>
+</ul>
+<h2 id="when-traditional-llms-might-be-better">When Traditional LLMs Might Be Better<a class="headerlink" href="#when-traditional-llms-might-be-better" title="Permanent link">&para;</a></h2>
+<p>Despite their impressive capabilities, reasoning models aren't always the optimal choice:</p>
+<ol>
+<li><strong>Speed-Critical Applications</strong>: When response time matters more than deep thinking</li>
+<li><strong>Creative Content Generation</strong>: For stories, marketing copy, or creative writing</li>
+<li><strong>Casual Conversation</strong>: When natural dialogue flow is more important than rigorous logic</li>
+<li><strong>High-Volume, Simple Tasks</strong>: For straightforward, repetitive tasks where the computational overhead isn't justified</li>
+</ol>
+<h2 id="the-performance-latency-trade-off">The Performance-Latency Trade-off<a class="headerlink" href="#the-performance-latency-trade-off" title="Permanent link">&para;</a></h2>
+<p>This is perhaps the most critical consideration when deciding whether to implement reasoning models. They typically:</p>
+<ul>
+<li>Take significantly longer to respond (sometimes 5-10x longer)</li>
+<li>Consume more tokens (and therefore cost more)</li>
+<li>Require more computational resources</li>
+<li>Provide more thorough, accurate results for complex problems</li>
+</ul>
+<p>In my experience, this trade-off means you should be selective about when to deploy reasoning capabilities. For many applications, a hybrid approach works best:</p>
+<ul>
+<li>Use standard LLMs for straightforward queries and initial interactions</li>
+<li>Switch to reasoning modes for complex questions</li>
+<li>Allow users to choose whether they want quick answers or deeper analysis</li>
+</ul>
+<h2 id="how-to-prompt-reasoning-models-effectively">How to Prompt Reasoning Models Effectively<a class="headerlink" href="#how-to-prompt-reasoning-models-effectively" title="Permanent link">&para;</a></h2>
+<p>Interestingly, prompting reasoning models often requires a different approach than traditional LLMs. Based on OpenAI's official guidance and my own experimentation:</p>
+<ol>
+<li>
+<p><strong>Keep prompts simple and direct</strong> - Contrary to what you might expect, you often don't need to explicitly tell reasoning models to "think step by step." They're already designed to do this.</p>
+</li>
+<li>
+<p><strong>Structure complex problems clearly</strong> - Use delimiters and clear formatting to separate different parts of your input.</p>
+</li>
+<li>
+<p><strong>For mathematical or logical problems</strong>, provide:</p>
+</li>
+<li>Clear problem statements</li>
+<li>Relevant context</li>
+<li>
+<p>Expected output format</p>
+</li>
+<li>
+<p><strong>Model-specific considerations</strong>:</p>
+</li>
+<li>For OpenAI's o-series, "developer messages" replace traditional system messages</li>
+<li>Claude 3.7 Sonnet requires explicit activation of extended thinking mode</li>
+<li>
+<p>DeepSeek R1 excels with mathematical reasoning when given clean, well-structured problems</p>
+</li>
+<li>
+<p><strong>Use verification steps for critical applications</strong> - Ask the model to verify its own work when accuracy is paramount.</p>
+</li>
+</ol>
+<h2 id="implementation-considerations">Implementation Considerations<a class="headerlink" href="#implementation-considerations" title="Permanent link">&para;</a></h2>
+<p>If you're planning to implement reasoning models in your applications, consider these practical factors:</p>
+<h3 id="1-cost-management">1. Cost Management<a class="headerlink" href="#1-cost-management" title="Permanent link">&para;</a></h3>
+<p>Reasoning models typically:
+- Process more tokens per request
+- Take longer to generate responses
+- May require premium API access</p>
+<p>Implement strategies like:
+- Selective use for complex queries only
+- Caching common reasoning patterns
+- User-controlled access to reasoning capabilities</p>
+<h3 id="2-latency-handling">2. Latency Handling<a class="headerlink" href="#2-latency-handling" title="Permanent link">&para;</a></h3>
+<p>The extended processing time requires thoughtful UX design:
+- Implement streaming for progressive response display
+- Show intermediate reasoning steps as they're generated
+- Provide clear user expectations about response times</p>
+<h3 id="3-hybrid-architectures">3. Hybrid Architectures<a class="headerlink" href="#3-hybrid-architectures" title="Permanent link">&para;</a></h3>
+<p>Consider architectures that combine:
+- Traditional LLMs for routine queries
+- Reasoning models for complex problems
+- Distilled reasoning models as a middle ground
+- Human review for critical applications</p>
+<h3 id="4-the-role-of-distilled-models">4. The Role of Distilled Models<a class="headerlink" href="#4-the-role-of-distilled-models" title="Permanent link">&para;</a></h3>
+<p>An exciting development is the emergence of distilled reasoning models like DeepSeek-R1-Distill-Qwen-32B, which:
+- Retain 80-95% of the reasoning capabilities of larger models
+- Run on more modest hardware
+- Offer faster inference times
+- Provide a cost-effective middle ground</p>
+<p>For many practical applications, these distilled models hit the sweet spot between performance and efficiency.</p>
+<h2 id="the-future-of-reasoning-models">The Future of Reasoning Models<a class="headerlink" href="#the-future-of-reasoning-models" title="Permanent link">&para;</a></h2>
+<p>We're just at the beginning of the reasoning model era, and I expect rapid developments:</p>
+<ul>
+<li>More efficient reasoning approaches that reduce latency</li>
+<li>Specialized reasoning models for specific domains (medical, legal, financial)</li>
+<li>Improved distillation techniques preserving more reasoning capabilities</li>
+<li>Better integration of reasoning with multimodal capabilities</li>
+</ul>
+<p>The competition between open-source models like DeepSeek R1 and proprietary offerings like OpenAI's o-series is driving innovation at a remarkable pace, with the performance gap between them narrowing significantly.</p>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>Reasoning models represent a significant advancement in AI capabilities, offering new possibilities for applications requiring thoughtful, methodical problem-solving. They're not a replacement for traditional LLMs but rather a specialized tool for specific use cases where depth of thinking matters more than speed.</p>
+<p>When implementing them, focus on:
+1. Selecting the right use cases where their advantages justify the trade-offs
+2. Designing user experiences that manage expectations around response times
+3. Considering hybrid approaches that leverage different model types appropriately
+4. Exploring distilled models as a balanced option for many applications</p>
+<p>As these models continue to evolve, they'll enable increasingly sophisticated applications that tackle problems previously beyond the reach of AI systems. The key is understanding their unique characteristics and implementing them thoughtfully where they add the most value.</p>
+<p>What are your experiences with reasoning models? Have you found particular applications where they shine? Let me know in the comments below!</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+    
+  </body>
+</html>
