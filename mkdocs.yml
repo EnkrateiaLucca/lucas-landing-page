@@ -15,7 +15,14 @@ nav:
     - posts/2025-04-10-agents-planning-eval-ai-index-reports.md
 
 plugins:
-  - blog
+  - blog:
+      blog_dir: posts
+      post_date_format: medium
+      post_url_date_format: yyyy/MM/dd
+      post_excerpt: required
+      archive: true
+      categories: true
+      pagination: true
   - search
 
 extra_css:
