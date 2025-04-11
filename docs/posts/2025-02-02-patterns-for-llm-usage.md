@@ -1,8 +1,13 @@
 ---
 title: Patterns for LLM Usage
 date: 2025-02-02
+categories:
+  - AI Best Practices
+  - LLM Development
+  - Technical Guides
+  - Design Patterns
+excerpt: A comprehensive guide to effective patterns and strategies for using Large Language Models, including code generation, prompt templates, and model tier selection.
 ---
- 
 
 # Patterns for Effective Usage of LLMs
 

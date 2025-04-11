@@ -1,6 +1,12 @@
 ---
 title: An Intuitive Introduction to LangGraph
 date: 2025-02-10
+categories:
+  - LLM Development
+  - Technical Tutorials
+  - LangChain
+  - Python
+excerpt: A comprehensive guide to understanding LangGraph, its relationship with LangChain, and how it helps in building complex LLM applications.
 ---
 
 # An Intuitive Introduction to LangGraph

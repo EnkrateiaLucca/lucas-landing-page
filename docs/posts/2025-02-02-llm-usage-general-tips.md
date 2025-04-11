@@ -1,6 +1,11 @@
 ---
 title: Quick Tips on Using LLMs Effectively
 date: 2025-02-02
+categories:
+  - AI Best Practices
+  - LLM Development
+  - Tutorials
+excerpt: A collection of practical tips and best practices for effectively using Large Language Models in your workflow.
 ---
 
 # **Quick Tips on Using LLMs Effectively**

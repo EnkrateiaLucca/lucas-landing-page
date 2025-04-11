@@ -1,7 +1,9 @@
 ---
-
 title: AI Tools Life Thoughts 2025
 date: 2025-03-22
+categories:
+- AI Tools & Workflows
+- Personal Journey & Reflections
 
 # AI Tools Life Thoughts 2025
 ---

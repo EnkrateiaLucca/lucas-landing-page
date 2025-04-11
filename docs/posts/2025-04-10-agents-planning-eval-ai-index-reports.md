@@ -1,9 +1,10 @@
 ---
-
 title: Agents, Planning, Evaluation and AI Index Reports 2025
 date: 2025-04-10
-
-
+categories:
+- LLM Development
+- AI Best Practices
+- Technical Tutorials
 ---
 
 # Agents, Planning, Evaluation and AI Index Reports 2025

@@ -2,6 +2,10 @@
 
 title: Reasoning Models, When to Use Them? What Are They Good for?
 date: 2025-03-23
+categories:
+- LLM Development
+- Technical Tutorials
+- AI Best Practices
 
 # Reasoning Models, When to Use Them? What Are They Good for?
 ---

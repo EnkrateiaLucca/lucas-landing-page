@@ -5,9 +5,9 @@ repo_url: https://github.com/EnkrateiaLucca/lucas-landing-page.git
 nav:
   - Home: index.md
   - Writing:
-    - posts/llm-usage-general-tips.md
-    - posts/patterns-for-llm-usage.md
-    - posts/intuitive-introduction-to-langgraph.md
+    - posts/2025-02-02-llm-usage-general-tips.md
+    - posts/2025-02-02-patterns-for-llm-usage.md
+    - posts/2025-02-10-intuitive-introduction-to-langgraph.md
     - posts/2025-02-16-blog-post-2.md
     - posts/2025-03-08-blog-post-3.md
     - posts/2025-03-22-ai-tools-life-thoughts-2025.md
