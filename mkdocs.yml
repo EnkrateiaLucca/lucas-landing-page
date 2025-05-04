@@ -5,25 +5,25 @@ repo_url: https://github.com/EnkrateiaLucca/lucas-landing-page.git
 nav:
   - Home: index.md
   - Writing:
-    - posts/2025-02-02-llm-usage-general-tips.md
-    - posts/2025-02-02-patterns-for-llm-usage.md
-    - posts/2025-02-10-intuitive-introduction-to-langgraph.md
-    - posts/2025-02-16-blog-post-2.md
-    - posts/2025-03-08-blog-post-3.md
-    - posts/2025-03-22-ai-tools-life-thoughts-2025.md
-    - posts/2025-03-23-reasoning-models,-when-to-use-them?-what-are-they-good-for?.md
-    - posts/2025-04-10-agents-planning-eval-ai-index-reports.md
+    - blog/index.md
+  - Courses:
+    - courses/index.md
 
 plugins:
   - blog:
-      blog_dir: posts
       post_date_format: medium
       post_url_date_format: yyyy/MM/dd
+      archive_date_format: YYYY
+      archive_url_date_format: YYYY
       post_excerpt: required
       archive: true
       categories: true
       pagination: true
   - search
+  - live-edit:
+      websockets_port: 9999
+      debug_mode: true
+      
 
 extra_css:
   - style.css
@@ -37,6 +37,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.sections
+    - navigation.indexes
     - toc.integrate
     - search.suggest
     - search.highlight

@@ -6,3 +6,4 @@ A few years ago, after spending some time as a research assistant at the [Champa
 From time to time I also do some [neat workshops](https://odsc.com/blog/speaker/lucas-soares/) about stuff I find interesting in AI.
 
 [Subscribe to my Newsletter](https://automata-learning-lab.kit.com/ccd5287996){ .md-button .md-button--primary }
+[Subscribe to my YouTube](https://www.youtube.com/@automatalearninglab){ .md-button .md-button--secondary }
