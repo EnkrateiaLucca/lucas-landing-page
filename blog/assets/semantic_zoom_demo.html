@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic Zoom Reader - Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    </style>
+</head>
+<body class="bg-black text-white min-h-screen flex flex-col items-center justify-start p-0 selection:bg-gray-300 selection:text-black">
+    <!-- Header Bar -->
+    <header class="w-full bg-gray-900 flex items-center justify-between px-6 py-4 shadow-md" style="min-height:64px;">
+        <div class="flex items-center gap-4">
+            <button id="levelDown" class="w-8 h-8 flex items-center justify-center rounded bg-gray-800 text-white text-xl font-bold hover:bg-gray-700 transition">-</button>
+            <div class="flex items-center gap-2">
+                <div id="levelDots" class="flex items-center gap-1"></div>
+                <span id="levelLabel" class="text-sm font-medium text-gray-200 ml-2">Level 1/5</span>
+            </div>
+            <button id="levelUp" class="w-8 h-8 flex items-center justify-center rounded bg-gray-800 text-white text-xl font-bold hover:bg-gray-700 transition">+</button>
+        </div>
+        <div class="text-sm text-gray-400">Demo: Use +/- to explore semantic levels</div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="mainContent" class="w-full flex flex-col items-center mt-8 px-4">
+        <div class="w-full max-w-5xl">
+            <div class="text-gray-300 text-sm mb-2">Displaying: <span id="displayingLabel">Full Article</span></div>
+            <div class="bg-gray-900 rounded-xl shadow-lg p-8">
+                <h2 id="contentTitle" class="text-2xl font-bold text-white mb-2"></h2>
+                <div id="contentSubtitle" class="text-gray-400 text-base mb-4"></div>
+                <div id="contentDisplay" class="prose prose-invert prose-lg max-w-none text-white"></div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // --- Demo Data ---
+        const demoData = {
+            "title": "The Discovery of CRISPR: Revolutionizing Genetic Engineering",
+            "levels": [
+                {
+                    "name": "Full Article",
+                    "content": "In the early 2000s, scientists studying bacterial immune systems stumbled upon what would become one of the most revolutionary tools in modern biology. The discovery began with researchers investigating how bacteria defend themselves against viral attacks.\n\nBacteria, despite being single-celled organisms, have sophisticated defense mechanisms. When a virus (bacteriophage) attacks a bacterium, the bacterial cell can capture small pieces of the viral DNA and store them in special regions of its own genome called CRISPR arrays (Clustered Regularly Interspaced Short Palindromic Repeats). These stored DNA sequences serve as a molecular memory bank.\n\nThe breakthrough came when scientists realized that bacteria use this stored information along with proteins called Cas (CRISPR-associated) to recognize and cut up viral DNA during future attacks. The Cas9 protein acts like molecular scissors, guided by RNA sequences derived from the stored viral DNA fragments.\n\nJennifer Doudna and Emmanuelle Charpentier made the crucial leap in 2012, demonstrating that this bacterial system could be reprogrammed to target any DNA sequence. By designing custom guide RNAs, researchers could direct Cas9 to cut specific locations in any organism's genome with unprecedented precision.\n\nThis discovery transformed genetic engineering from a slow, imprecise process into a fast, accurate, and relatively inexpensive technique. CRISPR-Cas9 has since been used to develop new treatments for genetic diseases, create disease-resistant crops, and advance our understanding of gene function across countless species.\n\nThe impact extends far beyond the laboratory. Clinical trials are underway for CRISPR treatments for sickle cell disease, certain types of blindness, and various cancers. The technology has also raised important ethical questions about the extent to which we should modify human genes, particularly in embryos where changes would be passed to future generations.\n\nToday, CRISPR continues to evolve, with new versions offering even greater precision and new capabilities, promising to reshape medicine, agriculture, and our understanding of life itself."
+                },
+                {
+                    "name": "Detailed Summary",
+                    "content": "CRISPR-Cas9 originated from studying bacterial immune systems in the early 2000s. Scientists discovered that bacteria store viral DNA fragments in special genome regions called CRISPR arrays and use Cas proteins to cut viral DNA during subsequent attacks.\n\nThe breakthrough came in 2012 when Jennifer Doudna and Emmanuelle Charpentier showed this system could be reprogrammed with custom guide RNAs to target any DNA sequence. This transformed genetic engineering from slow and imprecise to fast, accurate, and affordable.\n\nCRISPR has revolutionized research and medicine, enabling treatments for genetic diseases, disease-resistant crops, and advancing gene function studies. Clinical trials are testing treatments for sickle cell disease, blindness, and cancer, while also raising ethical questions about human gene modification, especially in embryos."
+                },
+                {
+                    "name": "Medium Summary",
+                    "content": "CRISPR-Cas9 was discovered by studying how bacteria defend against viruses using stored DNA fragments and cutting proteins. In 2012, scientists Jennifer Doudna and Emmanuelle Charpentier showed this system could be reprogrammed to edit any genes with unprecedented precision and speed. The technology is now revolutionizing medicine with treatments for genetic diseases and creating ethical debates about human gene editing."
+                },
+                {
+                    "name": "Brief Summary",
+                    "content": "Scientists discovered CRISPR by studying bacterial immune systems and developed it into a precise gene-editing tool in 2012. It's now revolutionizing medicine and agriculture while raising ethical questions about genetic modification."
+                },
+                {
+                    "name": "One-Liner",
+                    "content": "CRISPR: A bacterial defense system turned into the most powerful gene-editing tool in history."
+                }
+            ]
+        };
+
+        // --- State ---
+        let currentLevel = 0;
+        const loadedData = demoData;
+
+        // --- Elements ---
+        const contentTitle = document.getElementById('contentTitle');
+        const contentSubtitle = document.getElementById('contentSubtitle');
+        const contentDisplay = document.getElementById('contentDisplay');
+        const displayingLabel = document.getElementById('displayingLabel');
+        const levelLabel = document.getElementById('levelLabel');
+        const levelDots = document.getElementById('levelDots');
+        const levelDown = document.getElementById('levelDown');
+        const levelUp = document.getElementById('levelUp');
+        const mainContent = document.getElementById('mainContent');
+
+        // --- Render Functions ---
+        function renderAll() {
+            // Title
+            contentTitle.textContent = loadedData.title;
+            // Subtitle
+            contentSubtitle.textContent = loadedData.levels[currentLevel]?.name || '';
+            // Content
+            contentDisplay.innerHTML = (loadedData.levels[currentLevel]?.content || '').replace(/\n/g, '<br>');
+            // Displaying label
+            displayingLabel.textContent = loadedData.levels[currentLevel]?.name || 'Original Text';
+            // Level label
+            levelLabel.textContent = `Level ${currentLevel + 1}/${loadedData.levels.length}`;
+            // Dots
+            renderLevelDots();
+        }
+
+        function renderLevelDots() {
+            levelDots.innerHTML = '';
+            for (let i = 0; i < loadedData.levels.length; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'w-3 h-3 rounded-full mx-0.5 ' + (i === currentLevel ? 'bg-white' : 'bg-gray-600');
+                levelDots.appendChild(dot);
+            }
+        }
+
+        // --- Level Navigation ---
+        levelDown.addEventListener('click', () => {
+            if (currentLevel > 0) {
+                currentLevel--;
+                renderAll();
+            }
+        });
+        levelUp.addEventListener('click', () => {
+            if (currentLevel < loadedData.levels.length - 1) {
+                currentLevel++;
+                renderAll();
+            }
+        });
+
+        // --- Keyboard Navigation ---
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft' || e.key === '-') {
+                e.preventDefault();
+                if (currentLevel > 0) {
+                    currentLevel--;
+                    renderAll();
+                }
+            } else if (e.key === 'ArrowRight' || e.key === '+' || e.key === '=') {
+                e.preventDefault();
+                if (currentLevel < loadedData.levels.length - 1) {
+                    currentLevel++;
+                    renderAll();
+                }
+            }
+        });
+
+        // --- Initialize ---
+        renderAll();
+    </script>
+</body>
+</html>
