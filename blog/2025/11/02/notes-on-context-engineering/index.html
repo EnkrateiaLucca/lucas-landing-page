@@ -9,8 +9,10 @@
       
       
       
-        <link rel="prev" href="../notes-on-context-engineering/">
+        <link rel="prev" href="../notes-on-state-of-ai-2025/">
       
+      
+        <link rel="next" href="../ai-agents-for-real-work/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -18,7 +20,7 @@
     
     
       
-        <title>AI Agents for Real Work - Lucas Soares</title>
+        <title>Notes on Context Engineering - Lucas Soares</title>
       
     
     
@@ -70,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#notes-on-using-ai-agents-for-work" class="md-skip">
+        <a href="#notes-on-anthropics-context-engineering-blog-post" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AI Agents for Real Work
+              Notes on Context Engineering
             
           </span>
         </div>
@@ -770,7 +772,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              2 min read
+                              3 min read
                             
                           </span>
                         </div>
@@ -788,8 +790,32 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#notes-on-anthropics-context-engineering-blog-post" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes on Anthropic's Context Engineering Blog post
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agentic-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agentic Loops
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
           
@@ -804,27 +830,139 @@
   
 
 
+  <h1>Notes on Context Engineering</h1>
+
 <!-- more -->
 
-<h1 id="notes-on-using-ai-agents-for-work">Notes on Using AI Agents for Work<a class="headerlink" href="#notes-on-using-ai-agents-for-work" title="Permanent link">&para;</a></h1>
-<p>These are my notes on this article from Ethan Mollick: <a href="https://www.oneusefulthing.org/p/real-ai-agents-and-real-work">"Real AI Agents and Real Work"</a></p>
+<h2 id="notes-on-anthropics-context-engineering-blog-post">Notes on Anthropic's Context Engineering Blog post<a class="headerlink" href="#notes-on-anthropics-context-engineering-blog-post" title="Permanent link">&para;</a></h2>
 <ul>
-<li>OpenAI Created a <a href="https://cdn.openai.com/pdf/d5eb7428-c4e9-4a33-bd86-86dd4bcf12ce/GDPval.pdf">new test for AI ability</a> where they asked experts with +14 years of experience to design <a href="https://huggingface.co/datasets/openai/gdpval/viewer/default/train?views%5B%5D=train">tasks</a> that would take a human expert 4 to 7 hours to complete</li>
-<li><a href="https://www.oneusefulthing.org/p/real-ai-agents-and-real-work#:~:text=Human%20experts%20won,replace%20human%20jobs%3F">Human experts won (barely), however surprinsingly, the reason for most AI failures was formatting and instruction following issues rather than hallucinations and errors.</a></li>
-<li><a href="https://www.oneusefulthing.org/p/real-ai-agents-and-real-work#:~:text=%20ai%20doing%20one%20or%20more%20of%20these%20tasks%20does%20not%20replace%20my%20entire%20job%2C%20it%20shifts%20what%20i%20do.%20and%20as%20long%20as%20ai%20is%20jagged%20in%20its%20abilities%2C%20and%20cannot%20substitute%20for%20all%20the%20complex%20work%20of%20human%20interaction%2C%20it%20cannot%20easily%20replace%20jobs%20as%20a%20whole...">AI can't replace a job if it can't replace the complexity involved with human interactions as a whole</a></li>
-<li><a href="https://www.oneusefulthing.org/p/real-ai-agents-and-real-work#:~:text=I%20gave%20the,much%20as%20possible%3F%E2%80%9D">Really interesting use of Claude 4.5 Sonnet to replicate results of papers given the relevant data</a></li>
-<li><a href="https://www.oneusefulthing.org/p/real-ai-agents-and-real-work#:~:text=even%20small%20increases%20in%20accuracy%20(and%20new%20models%20are%20much%20less%20prone%20to%20errors)%20leads%20to%20huge%20increases%20in%20the%20number%20of%20tasks%20an%20ai%20can%20do">small improvements in a model’s accuracy on single steps can add up to huge gains when tasks require many steps in sequence.</a></li>
-<li>Interesting benchmark I didn't know about <a href="https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/">METR</a> measures AI's ability to complete long tasks</li>
-<li><a href="https://www.oneusefulthing.org/p/real-ai-agents-and-real-work#:~:text=if%20we%20don%E2%80%99t%20think%20hard%20about%20why%20we%20are%20doing%20work%2C%20and%20what%20work%20should%20look%20like%2C%20we%20are%20all%20going%20to%20drown%20in%20a%20wave%20of%20ai%20content.">I like this point Ethan makes about the importance of reflecting on why we do work and what it should look like to avoid drowning in a sea of AI generated content</a></li>
-<li>Simple workflow suggested by OpenAI is:<ul>
-<li>Delegate to AI as a first pass</li>
-<li>review</li>
-<li>if not good enough, try a few attempts at correcting &amp; instructing</li>
-<li>If still not good enough, do the work yourself</li>
+<li>
+<p><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents#:~:text=Context%20refers%20to,steerable%2C%20effective%20agents.">Working with LLMs effectively requires thinking in context, which means considering the holistic state available to the LLM and what kinds of behaviors that state might yield</a></p>
+</li>
+<li>
+<p><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents#:~:text=context%20engineering%20refers%20to%20the%20set%20of%20strategies%20for%20curating%20and%20maintaining%20the%20optimal%20set%20of%20tokens%20(information)%20during%20llm%20inference%2C%20including%20all%20the%20other%20information%20that%20may%20land%20there%20outside%20of%20the%20prompts.">Context engineering simple definition: set of strategies for curating context for LLMs (during inference and after) to optimize performance</a></p>
+</li>
+<li>
+<p><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents#:~:text=In%20the%20early,message%20history%2C%20etc">Context state: system instructions, tools, external data, message history, etc...</a></p>
+</li>
+</ul>
+<p><img alt="" src="../../../../assets/context-eng-prompt-eng.png" />
+<a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents#:~:text=of%20possible%20information.-,In%20contrast%20to%20the,to%20building%20capable%20agents,-Despite%20their%20speed">Image taken from Anthropic article</a></p>
+<ul>
+<li>
+<p><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents#:~:text=Despite%20their%20speed,that%20context%20decreases.">Why is context engineering relevant?</a> Due to <a href="https://research.trychroma.com/context-rot">context rot</a>, which is the process where as the context of a model increases, its ability to recall information from that context decreases</p>
+</li>
+<li>
+<p><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents#:~:text=As%20its%20context,context-wide%20dependencies.">Attention scarcity in LLMs is related to its transformer architecture where tokens attend to each other within the context leading to n^2 pairwise relationships for n tokens, therefore as context increases the ability to to attend to all these relationships gets stretched thin, creating a tension between context size and attention focus.</a></p>
+</li>
+<li><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents#:~:text=As%20its%20context,context-wide%20dependencies.">Models are also more used to shorter sequences, meaning less experience with context wide dependencies</a>  </li>
+<li>
+<p>Great quote defining the goal of context engineering:</p>
+<blockquote>
+<p>good context engineering means finding the smallest possible set of high-signal tokens that maximize the likelihood of some desired outcome.</p>
+</blockquote>
+</li>
+<li>
+<p><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents#:~:text=System%20prompts%20should,assume%20shared%20context.">System prompt should be a balance between too strict instructions and too vague, calibrating to allow for behavioral guidance while maintaining flexibility for strong heuristics to guide behavior.</a></p>
+</li>
+<li>
+<p><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents#:~:text=We%20recommend%20organizing,become%20more%20capable.">Organize prompts with sections (using XML or markdown headers)</a></p>
+</li>
+</ul>
+<blockquote>
+<p>minimal set of information that fully outlines your expected behavior. </p>
+</blockquote>
+<ul>
+<li>
+<p><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents#:~:text=It%E2%80%99s%20best%20to,efficient%20agent%20behaviors.">Start with minimal and improve instructions based on failure modes</a></p>
+</li>
+<li>
+<p><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents#:~:text=instead%2C%20we%20recommend%20working%20to%20curate%20a%20set%20of%20diverse%2C%20canonical%20examples%20that%20effectively%20portray%20the%20expected%20behavior%20of%20the%20agent.%20for%20an%20llm%2C%20examples%20are%20the%20%E2%80%9Cpictures%E2%80%9D%20worth%20a%20thousand%20words.">Curate carefully examples for optimizing Agent behavior and avoid overhead in maintenance or context bloat</a></p>
+</li>
+<li>
+<p>Agents: <a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents#:~:text=llms%20autonomously%20using%20tools%20in%20a%20loop.">"LLMs autonomously using tools in a loop."</a></p>
+</li>
+<li>
+<p><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents#:~:text=rather%20than%20pre-processing%20all%20relevant%20data%20up%20front%2C%20agents%20built%20with%20the%20%E2%80%9Cjust%20in%20time%E2%80%9D%20approach%20maintain%20lightweight%20identifiers%20(file%20paths%2C%20stored%20queries%2C%20web%20links%2C%20etc.)%20and%20use%20these%20references%20to%20dynamically%20load%20data%20into%20context%20at%20runtime%20using%20tools">"Just-in-time" context strategies means dynamically loading what the agent needs when it needs it</a></p>
+</li>
+<li>
+<p><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents#:~:text=Letting%20agents%20navigate,potentially%20irrelevant%20information.">Allow for discovery and autonomous data retrieval for a self-managed context windows to keep the agent focused on relevant subsets rather than drown in potentially irrelevant information</a></p>
+</li>
+<li>
+<p>Hybrid strategies with agents (like using <code>CLAUDE.md</code> files for Claude Code) represent this acknowledgement that as agents become more intelligent they will require less human curation over time so the advice Anthropic gives is:</p>
+<blockquote>
+<p><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents#:~:text=The%20hybrid%20strategy,top%20of%20Claude.">"do the simplest thing that works" </a></p>
+</blockquote>
+</li>
+<li>
+<p>Techniques to address context polution constraints for long horizon tasks:</p>
+</li>
+<li>
+<p><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents#:~:text=multi-agent%20architectures.-,Compaction,with%20minimal%20performance%20degradation.,-In%20Claude%20Code"><strong>compaction</strong>: summarizing a conversation near its context window limits and starting a fresh new context window</a>.</p>
+<ul>
+<li><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents#:~:text=an%20example%20of%20low-hanging%20superfluous%20content%20is%20clearing%20tool%20calls%20and%20results%20%E2%80%93%20once%20a%20tool%20has%20been%20called%20deep%20in%20the%20message%20history%2C%20why%20would%20the%20agent%20need%20to%20see%20the%20raw%20result%20again%3F%20one%20of%20the%20safest%20lightest%20touch%20forms%20of%20compaction%20is%20tool%20result%20clearing%2C%20most%20recently%20launched%20as%20a">tool results clearing is a simple example of something that can be removed from the agent's trace without much impact in performance</a></li>
 </ul>
 </li>
-<li>Estimation is that this simple strategy could yield a 40% increase in speed and make work 60% cheaper (although not sure how they measured the later)</li>
-<li>Having appropriate judgement about how we use AI and what we choose to use it for can lead to it making us more cabaple reather than just more productive</li>
+<li>
+<p>structured note-taking: agents writes external notes for later retrieval on demand</p>
+<ul>
+<li>For example a todo list for keeping track of progress, having a <code>NOTES.md</code> file for maintaining critical context</li>
+<li><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents#:~:text=Claude%20playing%20Pok%C3%A9mon,against%20different%20opponents.">They exemplify this with an example of Claude playing pokemon</a></li>
+<li><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents#:~:text=As%20part%20of,everything%20in%20context.">They built a memory tool with the Sonnet 4.5 launch</a></li>
+</ul>
+</li>
+<li>
+<p>sub-agent architectures: </p>
+<ul>
+<li><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents#:~:text=Sub-agent%20architectures-,Sub-agent%20architectures%20provide,task%20characteristics.%20For%20example%3A,-Compaction%20maintains%20conversational">involves using specialized sub-agents with clean focused tasks and a clean context window</a></li>
+<li>ideal for complex research tasks</li>
+</ul>
+</li>
+<li>When to use each strategy:<ul>
+<li>Compaction for extensive back-and-forth conversational tasks</li>
+<li>note-taking for iterative development with clear milestones</li>
+<li>multi-agent architectures for complex research and analysis where parallel exploration pays dividends</li>
+</ul>
+</li>
+</ul>
+<h2 id="agentic-loops">Agentic Loops<a class="headerlink" href="#agentic-loops" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>New skill to develop: <a href="https://simonwillison.net/2025/Sep/30/designing-agentic-loops/#:~:text=A%20critical%20new,an%20effective%20solution.">designing agentic loops</a></p>
+</li>
+<li>
+<p>Yolo mode (running coding agents with automatic approval)</p>
+</li>
+<li><a href="https://simonwillison.net/2025/Sep/30/designing-agentic-loops/#:~:text=Bad%20shell%20commands,other%20hacking%20attacks.">Risks:</a><ul>
+<li>bad shell commands deleting or maing stuff</li>
+<li>exfiltration attacks</li>
+<li>attacks that use your machine as a proxy to attack another target</li>
+</ul>
+</li>
+<li><a href="https://simonwillison.net/2025/Sep/30/designing-agentic-loops/#:~:text=Run%20your%20agent,cause%20any%20damage.">options</a><ul>
+<li>Run your agent in a secure sandbox</li>
+<li>acceptable options for most<ul>
+<li>https://github.com/apple/container</li>
+<li>Docker</li>
+<li>But remember this is not perfect! <a href="https://attack.mitre.org/techniques/T1611/">(container escapes)</a></li>
+</ul>
+</li>
+<li>Use someone else's computer</li>
+<li>Just risk it! (avoid expositing it to potentially palicious sources)</li>
+<li><a href="https://simonwillison.net/2025/Sep/30/designing-agentic-loops/#:~:text=Option%202%20is,attached%20GitHub%20repository.">Best option for Simon: Github Codespaces</a></li>
+</ul>
+</li>
+<li>Set credentials with tight budget limit on staging environments to contain any potential damage then design a cool <a href="https://simonwillison.net/2025/Sep/30/designing-agentic-loops/#:~:text=without%20extra%20guidance.-,Issuing%20tightly%20scoped%20credentials,important%20skill%20to%20develop.,-When%20to%20design">agentic loop like this for testing, exploring, prototyping...</a><ul>
+<li><a href="https://simonwillison.net/2025/Sep/30/designing-agentic-loops/#:~:text=not%20every%20problem%20responds%20well%20to%20this%20pattern%20of%20working.%20the%20thing%20to%20look%20out%20for%20here%20are%20problems%20with%20clear%20success%20criteria%20where%20finding%20a%20good%20solution%20is%20likely%20to%20involve%20(potentially%20slightly%20tedious)%20trial%20and%20error.">Criteria for when to design an agentic loop is the existence of a bunch of potential trial and errors in the task</a></li>
+</ul>
+</li>
+<li><a href="https://simonwillison.net/2025/Sep/30/designing-agentic-loops/#:~:text=A%20few%20examples,the%20tests%20passing.">Examples of scenarios for agentic loops</a>: debugging, performance optimization, upgrading dependencies, optimizing container sizes.</li>
+<li>
+<p>Automated tests!</p>
+<blockquote>
+<p><a href="https://simonwillison.net/2025/Sep/30/designing-agentic-loops/#:~:text=the%20value%20you%20can%20get%20from%20coding%20agents%20and%20other%20llm%20coding%20tools%20is%20massively%20amplified%20by%20a%20good%2C%20cleanly%20passing%20test%20suite.%20">The value you can get from coding agents and other LLM coding tools is massively amplified by a good, cleanly passing test suite.</a> </p>
+</blockquote>
+</li>
 </ul>
 <p><a class="md-button md-button--primary" href="https://automata-learning-lab.kit.com/ccd5287996">Subscribe to my Newsletter</a>
 <a class="md-button md-button--secondary" href="https://www.youtube.com/@automatalearninglab">Subscribe to my YouTube</a></p>
