@@ -16,7 +16,7 @@ In this post I just want to talk a little bit about some of the stuff I've been 
 
 ## AI Tools - Cursor
 
-This year I've been using [Cursor](www.cursor.com) more and more, I've been following in love with the process of finding new avenus of leveraging LLMs in new and exciting ways. On the one hand I carry a bit of that fear of never being able to code again without some AI hanging over me, on the other, building things through conversation can be quite exciting. 
+This year I've been using [Cursor](https://cursor.com) more and more, I've been following in love with the process of finding new avenus of leveraging LLMs in new and exciting ways. On the one hand I carry a bit of that fear of never being able to code again without some AI hanging over me, on the other, building things through conversation can be quite exciting. 
 
 Even as I write this post I'm thinking! "Hey, I don't have a simple automation to create a references section for my article!". Then, immediately I already think: "Ah, never mind, I can just ask Cursor to generate that when I'm done writing.
 

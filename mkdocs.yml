@@ -9,6 +9,8 @@ nav:
   - Courses:
     - courses/index.md
 
+
+
 plugins:
   - blog:
       post_date_format: medium
@@ -19,11 +21,7 @@ plugins:
       archive: true
       categories: true
       pagination: true
-  - search
-  - live-edit:
-      websockets_port: 9999
-      debug_mode: true
-      
+  - search      
 
 extra_css:
   - style.css

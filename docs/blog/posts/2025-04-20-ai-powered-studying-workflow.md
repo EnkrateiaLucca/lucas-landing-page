@@ -1060,8 +1060,6 @@ A simple pipeline/flow I like for doing data analysis with AI tools is:
 You can also leverage Gemini directly on [Google Colab](https://colab.research.google.com/drive/1RM9zavgkN3VqOMUetTL2J-ny5R3zwpIE)
 which although I haven't used it that much seems quite promising.
 
-[An example of a data analysis conversation I did with ChatGPT.](An example of a data analysis conversation I did with ChageBT).
-
 
 ## Miscelaneous Examples of AI Usage for Learning, Studying and Research
 
