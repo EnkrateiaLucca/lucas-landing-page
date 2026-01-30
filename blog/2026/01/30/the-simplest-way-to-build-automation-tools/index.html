@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../../22/ai-tools-life-thoughts-2025/">
+        <link rel="prev" href="../../27/notes-on-agent-skills/">
       
-      
-        <link rel="next" href="../../../04/10/agents-planning-evaluation-and-ai-index-reports-2025/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>Reasoning Models, When to Use Them? What Are They Good for? - Lucas Soares</title>
+        <title>The Simplest Way to Build Automation Tools - Lucas Soares</title>
       
     
     
@@ -72,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#whats-a-reasoning-model" class="md-skip">
+        <a href="#the-simplest-way-to-build-personal-automation-tools" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Reasoning Models, When to Use Them? What Are They Good for?
+              The Simplest Way to Build Automation Tools
             
           </span>
         </div>
@@ -785,22 +783,10 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2025-03-23 00:00:00+00:00" class="md-ellipsis">Mar 23, 2025</time>
+                        <time datetime="2026-01-30 00:00:00+00:00" class="md-ellipsis">Jan 30, 2026</time>
                       </div>
                     </li>
                     
-                    
-                      <li class="md-nav__item">
-                        <div class="md-nav__link">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
-                          <span class="md-ellipsis">
-                            in
-                            
-                              <a href="../../../../category/llm-development/">LLM Development</a>, 
-                              <a href="../../../../category/technical-guides/">Technical Guides</a>, 
-                              <a href="../../../../category/ai-best-practices/">AI Best Practices</a></span>
-                        </div>
-                      </li>
                     
                     
                       
@@ -809,7 +795,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              6 min read
+                              4 min read
                             
                           </span>
                         </div>
@@ -827,6 +813,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -835,73 +823,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#whats-a-reasoning-model" class="md-nav__link">
+  <a href="#the-recipe" class="md-nav__link">
     <span class="md-ellipsis">
-      What's a Reasoning Model?
+      The Recipe
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-do-we-know-theyre-better" class="md-nav__link">
+  <a href="#step-1-install-uv" class="md-nav__link">
     <span class="md-ellipsis">
-      How do we Know they're Better?
+      Step 1: Install UV
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#which-models-we-can-officially-call-reasoning-models" class="md-nav__link">
+  <a href="#step-2-use-ai-to-generate-your-script" class="md-nav__link">
     <span class="md-ellipsis">
-      Which Models we can officially call Reasoning Models?
+      Step 2: Use AI to Generate Your Script
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-should-you-use-reasoning-models" class="md-nav__link">
-    <span class="md-ellipsis">
-      When Should You Use Reasoning Models?
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="When Should You Use Reasoning Models?">
+    <nav class="md-nav" aria-label="Step 2: Use AI to Generate Your Script">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-complex-problem-solving" class="md-nav__link">
+  <a href="#use-this-prompt-template" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Complex Problem-Solving
+      Use This Prompt Template
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-code-generation-and-analysis" class="md-nav__link">
+  <a href="#what-you-get" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Code Generation and Analysis
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-high-stakes-decision-support" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. High-Stakes Decision Support
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-educational-applications" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Educational Applications
+      What You Get
     </span>
   </a>
   
@@ -913,96 +874,54 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-traditional-llms-might-be-better" class="md-nav__link">
+  <a href="#step-3-run-it" class="md-nav__link">
     <span class="md-ellipsis">
-      When Traditional LLMs Might Be Better
+      Step 3: Run It
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-performance-latency-trade-off" class="md-nav__link">
+  <a href="#step-4-create-an-alias" class="md-nav__link">
     <span class="md-ellipsis">
-      The Performance-Latency Trade-off
+      Step 4: Create an Alias
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-prompt-reasoning-models-effectively" class="md-nav__link">
+  <a href="#why-this-works" class="md-nav__link">
     <span class="md-ellipsis">
-      How to Prompt Reasoning Models Effectively
+      Why This Works
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation-considerations" class="md-nav__link">
+  <a href="#real-examples" class="md-nav__link">
     <span class="md-ellipsis">
-      Implementation Considerations
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Implementation Considerations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-cost-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Cost Management
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-latency-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Latency Handling
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-hybrid-architectures" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Hybrid Architectures
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-the-role-of-distilled-models" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. The Role of Distilled Models
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-future-of-reasoning-models" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Future of Reasoning Models
+      Real Examples
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
+  <a href="#the-power-of-simplicity" class="md-nav__link">
     <span class="md-ellipsis">
-      Conclusion
+      The Power of Simplicity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources
     </span>
   </a>
   
@@ -1023,196 +942,151 @@
   
 
 
-  <h1>Reasoning Models, When to Use Them? What Are They Good for?</h1>
-
 <!-- more -->
 
-<h2 id="whats-a-reasoning-model">What's a Reasoning Model?<a class="headerlink" href="#whats-a-reasoning-model" title="Permanent link">&para;</a></h2>
-<p>I guess I want to start this conversation by defining what a thinking/reasoning model is. The easiest way to define it is that it is a model specially trained and designed for thinking through problems. </p>
-<p>Now, the more elaborate way of going about this definition is to look into the information we have about what differs between these models and the traditional models we are used to like ChatGPT or Claude.</p>
-<details class="notes">
-<summary>How Reasoning models differ from Traditional LLMs</summary>
-<p>Reasoning models differ from traditional LLMs in several key ways:</p>
-<ul>
-<li>
-<p><strong>Computational Approach</strong>: While traditional LLMs generate text in a fixed number of passes and are optimized for efficiency, reasoning models allocate variable computation time based on problem complexity and implement explicit "thinking" phases.</p>
-</li>
-<li>
-<p><strong>Problem-Solving Methods</strong>: Traditional LLMs rely primarily on pattern recognition, while reasoning models utilize explicit step-by-step reasoning processes and show their work through intermediate steps.</p>
-</li>
-<li>
-<p><strong>Training Methodology</strong>: Reasoning models are trained on specialized datasets focused on reasoning tasks and use reinforcement learning with rewards specifically for reasoning quality.</p>
-</li>
-<li>
-<p><strong>Output Characteristics</strong>: Reasoning models produce more structured, methodical responses with explicit verification steps and self-critique, prioritizing logical correctness over natural-sounding language.</p>
-</li>
-<li>
-<p><strong>Chain of Thought (CoT) Processing</strong>: Models like o1 and DeepSeek R1 implement extensive chain-of-thought reasoning, breaking down complex problems into manageable steps before providing answers.</p>
-</li>
-</ul>
-</details>
-<p>The way I like to think about them for the purpose of building stuff with them is this: </p>
-<blockquote>
-<p>It's a model that gives you almost guaranteed better performance at the expense of latency and cost.</p>
-</blockquote>
-<p>So it's essentially a <strong>better yet slower model</strong>. </p>
-<p>I think looking at it from this perspective will help us define a framework for thinking about them effectively.</p>
-<hr />
-<h2 id="how-do-we-know-theyre-better">How do we Know they're Better?<a class="headerlink" href="#how-do-we-know-theyre-better" title="Permanent link">&para;</a></h2>
-<p>Well, if you go to <a href="www.artificialanalysis.ai"> Artificial Analysis </a> and check out their independent evaluation of different models, you will see that their performance against other models for different indexes of capabilities like intelligence (performance in intelligence related tasks) almost always come out on top.</p>
-<p>According to recent benchmarks, reasoning models consistently outperform traditional LLMs on tasks requiring complex logical thinking, mathematical problem-solving, and coding challenges. For example, DeepSeek R1 has demonstrated superior performance on mathematical reasoning compared to many general-purpose models, while Claude 3.7 Sonnet with extended thinking enabled shows remarkable improvements over its standard mode.</p>
-<p>The performance gap is particularly noticeable in:
-- Complex mathematical problems
-- Multi-step logical puzzles
-- Detailed code generation with explanations
-- Step-by-step problem-solving in scientific domains</p>
-<p>However, it's worth noting that this superior performance comes with trade-offs in speed and computational cost, which I'll discuss later.</p>
-<h2 id="which-models-we-can-officially-call-reasoning-models">Which Models we can officially call Reasoning Models?<a class="headerlink" href="#which-models-we-can-officially-call-reasoning-models" title="Permanent link">&para;</a></h2>
-<p>Let's make a little list of the current leading reasoning models:</p>
+<h1 id="the-simplest-way-to-build-personal-automation-tools">The Simplest Way to Build Personal Automation Tools<a class="headerlink" href="#the-simplest-way-to-build-personal-automation-tools" title="Permanent link">&para;</a></h1>
+<p>Yesterday I taught my O'Reilly live course about how to automate tasks with Python and AI and I discussed this really cool recipe that I think is worth sharing here about how to create simple Python automation scripts with UV, Python, and a little bit of AI chatbots.</p>
+<h2 id="the-recipe">The Recipe<a class="headerlink" href="#the-recipe" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>Deep Seek R1</strong> - An open-source 671B parameter model that excels in mathematical reasoning and has distilled versions available</li>
-<li><strong>OpenAI o-series models</strong> - Including o1, o1-mini, o1-pro, o3-mini, and o3-mini-high, specifically designed for extended reasoning</li>
-<li><strong>Claude 3.7 Sonnet</strong> - With "extended thinking" mode activated, becoming a hybrid reasoning/general model</li>
-<li><strong>Grok-3</strong> - xAI's latest model with enhanced reasoning capabilities</li>
-<li><strong>Gemini 2.0 Flash/Advanced</strong> - Google's reasoning-focused models</li>
-<li><strong>Sky T-1</strong> - A relatively new Chinese reasoning model from SkyWork</li>
-<li><strong>Baidu's ERNIE 4.0-Reasoning</strong> - Launched in March 2025 as a competitor to DeepSeek R1</li>
-<li><strong>Tencent's T1</strong> - A reasoning model introduced in early 2025</li>
-<li><strong>Llama-3-70B-Instruct</strong> - While not explicitly marketed as a reasoning model, it shows strong reasoning capabilities</li>
+<li><strong>Install UV</strong> (one command, one time)</li>
+<li><strong>Use AI to generate your script</strong> with a simple prompt</li>
+<li><strong>Run it with <code>uv run</code></strong> (no virtual environment needed)</li>
+<li><strong>Create an alias</strong> to make it a custom command</li>
+<li><strong>Done.</strong> You now have a personal automation tool.</li>
 </ol>
-<p>This list is continually growing as more companies release specialized reasoning models to compete in this rapidly evolving space.</p>
-<h2 id="when-should-you-use-reasoning-models">When Should You Use Reasoning Models?<a class="headerlink" href="#when-should-you-use-reasoning-models" title="Permanent link">&para;</a></h2>
-<p>Reasoning models shine in specific scenarios, but they're not always the right choice. Here's my take on when they make sense:</p>
-<h3 id="1-complex-problem-solving">1. Complex Problem-Solving<a class="headerlink" href="#1-complex-problem-solving" title="Permanent link">&para;</a></h3>
-<p>If your use case involves solving intricate problems that require breaking down complex logic into steps, reasoning models are your best bet. They excel at:</p>
+<h2 id="step-1-install-uv">Step 1: Install UV<a class="headerlink" href="#step-1-install-uv" title="Permanent link">&para;</a></h2>
+<p><a href="https://docs.astral.sh/uv/">UV</a> is a fast Python package manager that handles everything for you. Install it once:</p>
+<p><strong>macOS/Linux:</strong></p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-LsSf<span class="w"> </span>https://astral.sh/uv/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+</code></pre></div>
+<p><strong>Windows:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">powershell</span> <span class="n">-ExecutionPolicy</span> <span class="n">ByPass</span> <span class="n">-c</span> <span class="s2">&quot;irm https://astral.sh/uv/install.ps1 | iex&quot;</span>
+</code></pre></div>
+<p>That's it. No messing with Python versions, virtual environments, or pip installations.</p>
+<h2 id="step-2-use-ai-to-generate-your-script">Step 2: Use AI to Generate Your Script<a class="headerlink" href="#step-2-use-ai-to-generate-your-script" title="Permanent link">&para;</a></h2>
+<p>Here's where it gets really powerful: instead of writing the script yourself, you can use AI to generate it with the exact format you need.</p>
+<h3 id="use-this-prompt-template">Use This Prompt Template<a class="headerlink" href="#use-this-prompt-template" title="Permanent link">&para;</a></h3>
+<p>Copy this prompt and replace <code>[YOUR TASK]</code> with what you want to automate:</p>
+<div class="highlight"><pre><span></span><code>Write a Python automation script that [YOUR TASK].
+
+Requirements:
+- Include UV inline script metadata at the top (# /// script format)
+- List all required dependencies in the metadata
+- Make it a simple CLI tool that accepts input via sys.argv[1]
+- Keep it focused and single-purpose
+- Include minimal error handling
+
+Example format:
+# /// script
+# requires-python = &quot;&gt;=3.10&quot;
+# dependencies = [&quot;package1&quot;, &quot;package2&quot;]
+# ///
+</code></pre></div>
+<p><strong>Example:</strong> "Write a Python automation script that downloads a PDF from a URL and summarizes it using OpenAI's API"</p>
+<p>The AI will generate a properly formatted script with:</p>
 <ul>
-<li>Mathematical challenges</li>
-<li>Logic puzzles</li>
-<li>Scientific reasoning</li>
-<li>Step-by-step explanations</li>
+<li>UV inline metadata already configured</li>
+<li>All dependencies declared</li>
+<li>Simple command-line interface using <code>sys.argv[1]</code></li>
+<li>Ready to run with <code>uv run</code></li>
 </ul>
-<h3 id="2-code-generation-and-analysis">2. Code Generation and Analysis<a class="headerlink" href="#2-code-generation-and-analysis" title="Permanent link">&para;</a></h3>
-<p>For software development tasks requiring thoughtful analysis, reasoning models offer significant advantages:</p>
+<h3 id="what-you-get">What You Get<a class="headerlink" href="#what-you-get" title="Permanent link">&para;</a></h3>
+<p>Here's the magic: UV lets you declare dependencies right in your Python file using <a href="https://docs.astral.sh/uv/guides/scripts/#declaring-script-dependencies">inline script metadata</a>. The AI-generated script will look like this:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># /// script</span>
+<span class="c1"># requires-python = &quot;&gt;=3.10&quot;</span>
+<span class="c1"># dependencies = [</span>
+<span class="c1">#     &quot;openai&quot;,</span>
+<span class="c1">#     &quot;pymupdf&quot;,</span>
+<span class="c1"># ]</span>
+<span class="c1"># ///</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+<span class="kn">import</span> <span class="nn">fitz</span>
+
+<span class="k">def</span> <span class="nf">summarize_pdf</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
+    <span class="c1"># Extract text from PDF</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="n">fitz</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span> <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">)</span>
+
+    <span class="c1"># Summarize with AI</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+        <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o-mini&quot;</span><span class="p">,</span>
+        <span class="n">messages</span><span class="o">=</span><span class="p">[{</span>
+            <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Summarize this into bullet points:</span><span class="se">\n\n</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">}]</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="n">summarize_pdf</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span>
+</code></pre></div>
+<p>Save this as <code>~/scripts/summarize_pdf.py</code>.</p>
+<h2 id="step-3-run-it">Step 3: Run It<a class="headerlink" href="#step-3-run-it" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>~/scripts/summarize_pdf.py<span class="w"> </span>paper.pdf
+</code></pre></div>
+<p>UV automatically:</p>
 <ul>
-<li>Writing complex algorithms</li>
-<li>Debugging with systematic approaches</li>
-<li>Explaining code behavior comprehensively</li>
-<li>Architecture design with logical justification</li>
+<li>Creates an isolated environment</li>
+<li>Installs the exact dependencies you specified</li>
+<li>Runs your script</li>
+<li>Cleans up after itself</li>
 </ul>
-<h3 id="3-high-stakes-decision-support">3. High-Stakes Decision Support<a class="headerlink" href="#3-high-stakes-decision-support" title="Permanent link">&para;</a></h3>
-<p>When accuracy and reliability are paramount:</p>
+<p>No <code>pip install</code>. No <code>requirements.txt</code>. No virtual environment activation. Just run it.</p>
+<h2 id="step-4-create-an-alias">Step 4: Create an Alias<a class="headerlink" href="#step-4-create-an-alias" title="Permanent link">&para;</a></h2>
+<p>Make it a custom command you can run from anywhere:</p>
+<p><strong>macOS/Linux</strong> - Add to <code>~/.zshrc</code>, <code>~/.bashrc</code>, or <code>~/.aliases</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Simple alias (no arguments)</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">summarize</span><span class="o">=</span><span class="s1">&#39;uv run ~/scripts/summarize_pdf.py&#39;</span>
+
+<span class="c1"># Or as a function to accept arguments using &quot;$@&quot;</span>
+summarize<span class="o">()</span><span class="w"> </span><span class="o">{</span><span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>~/scripts/summarize_pdf.py<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
+</code></pre></div>
+<p><strong>Windows</strong> - Add to your PowerShell profile (<code>notepad $PROFILE</code>):</p>
+<div class="highlight"><pre><span></span><code><span class="k">function</span> <span class="n">summarize</span> <span class="p">{</span> <span class="n">uv</span> <span class="n">run</span> <span class="n">C</span><span class="p">:\</span><span class="n">scripts</span><span class="p">\</span><span class="n">summarize_pdf</span><span class="p">.</span><span class="n">py</span> <span class="nv">@args</span> <span class="p">}</span>
+</code></pre></div>
+<p>Reload your shell and you're done:
+<div class="highlight"><pre><span></span><code>summarize<span class="w"> </span>research_paper.pdf
+</code></pre></div></p>
+<h2 id="why-this-works">Why This Works<a class="headerlink" href="#why-this-works" title="Permanent link">&para;</a></h2>
+<p><strong>AI does the heavy lifting:</strong> You describe what you want, AI generates the properly formatted script. No need to remember syntax or look up package names.</p>
+<p><strong>No dependency hell:</strong> Each script declares exactly what it needs. No conflicts between projects.</p>
+<p><strong>No setup ceremony:</strong> Someone else can run your script with just <code>uv run script.py</code>. UV handles everything.</p>
+<p><strong>No maintenance:</strong> Dependencies are locked to what works. Scripts keep working months later.</p>
+<p><strong>No barriers:</strong> Describe your task to AI, test the script once, alias it, use it forever.</p>
+<h2 id="real-examples">Real Examples<a class="headerlink" href="#real-examples" title="Permanent link">&para;</a></h2>
+<p>In my <a href="https://learning.oreilly.com/live-events/using-ai-tools-and-python-to-automate-tasks/0642572011642/">O'Reilly course on automating tasks with Python + AI</a>, students have built automation tools for:</p>
 <ul>
-<li>Financial analysis where errors could be costly</li>
-<li>Medical reasoning requiring careful consideration</li>
-<li>Legal analysis with logical chains of thought</li>
-<li>Risk assessment requiring thorough evaluation</li>
+<li><strong>PDF processing</strong>: Download ArXiv papers, extract data, summarize with AI</li>
+<li><strong>File organization</strong>: Categorize images using vision AI, organize downloads by type</li>
+<li><strong>Data extraction</strong>: Pull structured data from receipts, invoices, emails</li>
+<li><strong>Web automation</strong>: Add movies to watchlists, scrape data, fill forms</li>
+<li><strong>Report generation</strong>: Analyze data, create charts, generate presentations</li>
 </ul>
-<h3 id="4-educational-applications">4. Educational Applications<a class="headerlink" href="#4-educational-applications" title="Permanent link">&para;</a></h3>
-<p>For tools designed to teach or explain complex topics:</p>
+<p>Each one is just a Python script with inline dependencies, aliased to a custom command.</p>
+<h2 id="the-power-of-simplicity">The Power of Simplicity<a class="headerlink" href="#the-power-of-simplicity" title="Permanent link">&para;</a></h2>
+<p>Instead of building complex applications, you create single-purpose tools that do exactly what you need. With AI generating the scripts and UV handling dependencies, each automation tool is:</p>
 <ul>
-<li>Tutorial systems requiring step-by-step instruction</li>
-<li>Math problem solving with shown work</li>
-<li>Scientific concept explanations</li>
-<li>Knowledge exploration with logical connections</li>
+<li><strong>AI-generated</strong> - describe your task in plain English, get working code</li>
+<li><strong>Self-contained</strong> - dependencies declared inline</li>
+<li><strong>Instantly runnable</strong> - just <code>uv run</code></li>
+<li><strong>Easily shareable</strong> - send someone a file, they can run it</li>
+<li><strong>Permanently useful</strong> - alias it once, use it forever</li>
 </ul>
-<h2 id="when-traditional-llms-might-be-better">When Traditional LLMs Might Be Better<a class="headerlink" href="#when-traditional-llms-might-be-better" title="Permanent link">&para;</a></h2>
-<p>Despite their impressive capabilities, reasoning models aren't always the optimal choice:</p>
-<ol>
-<li><strong>Speed-Critical Applications</strong>: When response time matters more than deep thinking</li>
-<li><strong>Creative Content Generation</strong>: For stories, marketing copy, or creative writing</li>
-<li><strong>Casual Conversation</strong>: When natural dialogue flow is more important than rigorous logic</li>
-<li><strong>High-Volume, Simple Tasks</strong>: For straightforward, repetitive tasks where the computational overhead isn't justified</li>
-</ol>
-<h2 id="the-performance-latency-trade-off">The Performance-Latency Trade-off<a class="headerlink" href="#the-performance-latency-trade-off" title="Permanent link">&para;</a></h2>
-<p>This is perhaps the most critical consideration when deciding whether to implement reasoning models. They typically:</p>
+<p>This is how you build a personal toolkit of automation superpowers.</p>
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Take significantly longer to respond (sometimes 5-10x longer)</li>
-<li>Consume more tokens (and therefore cost more)</li>
-<li>Require more computational resources</li>
-<li>Provide more thorough, accurate results for complex problems</li>
+<li><a href="https://docs.astral.sh/uv/">UV Documentation</a></li>
+<li><a href="https://docs.astral.sh/uv/guides/scripts/">UV Script Guide</a></li>
+<li><a href="https://learning.oreilly.com/live-events/using-ai-tools-and-python-to-automate-tasks/0642572011642/">O'Reilly Course: Automate Tasks with Python + AI</a></li>
+<li><a href="https://peps.python.org/pep-0723/">PEP 723 - Inline Script Metadata</a></li>
 </ul>
-<p>In my experience, this trade-off means you should be selective about when to deploy reasoning capabilities. For many applications, a hybrid approach works best:</p>
-<ul>
-<li>Use standard LLMs for straightforward queries and initial interactions</li>
-<li>Switch to reasoning modes for complex questions</li>
-<li>Allow users to choose whether they want quick answers or deeper analysis</li>
-</ul>
-<h2 id="how-to-prompt-reasoning-models-effectively">How to Prompt Reasoning Models Effectively<a class="headerlink" href="#how-to-prompt-reasoning-models-effectively" title="Permanent link">&para;</a></h2>
-<p>Interestingly, prompting reasoning models often requires a different approach than traditional LLMs. Based on OpenAI's official guidance and my own experimentation:</p>
-<ol>
-<li>
-<p><strong>Keep prompts simple and direct</strong> - Contrary to what you might expect, you often don't need to explicitly tell reasoning models to "think step by step." They're already designed to do this.</p>
-</li>
-<li>
-<p><strong>Structure complex problems clearly</strong> - Use delimiters and clear formatting to separate different parts of your input.</p>
-</li>
-<li>
-<p><strong>For mathematical or logical problems</strong>, provide:</p>
-</li>
-<li>Clear problem statements</li>
-<li>Relevant context</li>
-<li>
-<p>Expected output format</p>
-</li>
-<li>
-<p><strong>Model-specific considerations</strong>:</p>
-</li>
-<li>For OpenAI's o-series, "developer messages" replace traditional system messages</li>
-<li>Claude 3.7 Sonnet requires explicit activation of extended thinking mode</li>
-<li>
-<p>DeepSeek R1 excels with mathematical reasoning when given clean, well-structured problems</p>
-</li>
-<li>
-<p><strong>Use verification steps for critical applications</strong> - Ask the model to verify its own work when accuracy is paramount.</p>
-</li>
-</ol>
-<h2 id="implementation-considerations">Implementation Considerations<a class="headerlink" href="#implementation-considerations" title="Permanent link">&para;</a></h2>
-<p>If you're planning to implement reasoning models in your applications, consider these practical factors:</p>
-<h3 id="1-cost-management">1. Cost Management<a class="headerlink" href="#1-cost-management" title="Permanent link">&para;</a></h3>
-<p>Reasoning models typically:
-- Process more tokens per request
-- Take longer to generate responses
-- May require premium API access</p>
-<p>Implement strategies like:
-- Selective use for complex queries only
-- Caching common reasoning patterns
-- User-controlled access to reasoning capabilities</p>
-<h3 id="2-latency-handling">2. Latency Handling<a class="headerlink" href="#2-latency-handling" title="Permanent link">&para;</a></h3>
-<p>The extended processing time requires thoughtful UX design:
-- Implement streaming for progressive response display
-- Show intermediate reasoning steps as they're generated
-- Provide clear user expectations about response times</p>
-<h3 id="3-hybrid-architectures">3. Hybrid Architectures<a class="headerlink" href="#3-hybrid-architectures" title="Permanent link">&para;</a></h3>
-<p>Consider architectures that combine:
-- Traditional LLMs for routine queries
-- Reasoning models for complex problems
-- Distilled reasoning models as a middle ground
-- Human review for critical applications</p>
-<h3 id="4-the-role-of-distilled-models">4. The Role of Distilled Models<a class="headerlink" href="#4-the-role-of-distilled-models" title="Permanent link">&para;</a></h3>
-<p>An exciting development is the emergence of distilled reasoning models like DeepSeek-R1-Distill-Qwen-32B, which:
-- Retain 80-95% of the reasoning capabilities of larger models
-- Run on more modest hardware
-- Offer faster inference times
-- Provide a cost-effective middle ground</p>
-<p>For many practical applications, these distilled models hit the sweet spot between performance and efficiency.</p>
-<h2 id="the-future-of-reasoning-models">The Future of Reasoning Models<a class="headerlink" href="#the-future-of-reasoning-models" title="Permanent link">&para;</a></h2>
-<p>We're just at the beginning of the reasoning model era, and I expect rapid developments:</p>
-<ul>
-<li>More efficient reasoning approaches that reduce latency</li>
-<li>Specialized reasoning models for specific domains (medical, legal, financial)</li>
-<li>Improved distillation techniques preserving more reasoning capabilities</li>
-<li>Better integration of reasoning with multimodal capabilities</li>
-</ul>
-<p>The competition between open-source models like DeepSeek R1 and proprietary offerings like OpenAI's o-series is driving innovation at a remarkable pace, with the performance gap between them narrowing significantly.</p>
-<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
-<p>Reasoning models represent a significant advancement in AI capabilities, offering new possibilities for applications requiring thoughtful, methodical problem-solving. They're not a replacement for traditional LLMs but rather a specialized tool for specific use cases where depth of thinking matters more than speed.</p>
-<p>When implementing them, focus on:
-1. Selecting the right use cases where their advantages justify the trade-offs
-2. Designing user experiences that manage expectations around response times
-3. Considering hybrid approaches that leverage different model types appropriately
-4. Exploring distilled models as a balanced option for many applications</p>
-<p>As these models continue to evolve, they'll enable increasingly sophisticated applications that tackle problems previously beyond the reach of AI systems. The key is understanding their unique characteristics and implementing them thoughtfully where they add the most value.</p>
-<p>What are your experiences with reasoning models? Have you found particular applications where they shine? Let me know in the comments below!</p>
+<p><a class="md-button md-button--primary" href="https://automata-learning-lab.kit.com/ccd5287996">Subscribe to my Newsletter</a>
+<a class="md-button md-button--secondary" href="https://www.youtube.com/@automatalearninglab">Subscribe to my YouTube</a></p>
 
 
 
