@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent Engineering for Engineering Teams - Workshop Overview</title>
+    <style>
+        /* ========================================
+           AUTOMATA LEARNING LAB BRAND TEMPLATE
+           Workshop A: Coral Accent #E86B5A
+           ======================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 12mm;
+            @top-left { content: none; }
+            @top-center { content: none; }
+            @top-right { content: none; }
+            @bottom-left { content: none; }
+            @bottom-center { content: none; }
+            @bottom-right { content: none; }
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', 'Helvetica', 'Arial', sans-serif;
+            font-size: 9pt;
+            line-height: 1.45;
+            color: #2A2825;
+            background: #F5F3EB;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 12mm;
+        }
+
+        /* Header */
+        .page-header {
+            text-align: center;
+            padding-bottom: 10pt;
+            margin-bottom: 10pt;
+            border-bottom: 3px solid #000;
+        }
+
+        .workshop-badge {
+            display: inline-block;
+            background: #E86B5A;
+            color: #fff;
+            font-size: 7pt;
+            font-weight: 700;
+            padding: 3pt 10pt;
+            text-transform: uppercase;
+            letter-spacing: 1pt;
+            margin-bottom: 6pt;
+        }
+
+        .page-header h1 {
+            font-size: 20pt;
+            font-weight: 700;
+            margin-bottom: 4pt;
+            color: #000;
+            line-height: 1.2;
+        }
+
+        .page-header .subtitle {
+            font-size: 11pt;
+            color: #5C5750;
+            margin-bottom: 4pt;
+        }
+
+        .page-header .meta {
+            font-size: 8pt;
+            color: #8A847A;
+        }
+
+        /* Section Headers */
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            margin: 10pt 0 6pt 0;
+            padding: 4pt 8pt;
+            background: #000;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.5pt;
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8pt;
+            margin-bottom: 8pt;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 6pt;
+            margin-bottom: 8pt;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6pt;
+            margin-bottom: 8pt;
+        }
+
+        /* Cards */
+        .card {
+            border: 2px solid #000;
+            padding: 8pt;
+            background: #fff;
+            break-inside: avoid;
+        }
+
+        .card.coral { border-left: 5px solid #E86B5A; }
+        .card.golden { border-left: 5px solid #F5C542; }
+
+        .card-title {
+            font-size: 10pt;
+            font-weight: 700;
+            margin-bottom: 5pt;
+            padding-bottom: 4pt;
+            border-bottom: 1px solid #DDD9D2;
+        }
+
+        .card-content {
+            font-size: 8pt;
+        }
+
+        .card ul {
+            margin-left: 10pt;
+            margin-top: 3pt;
+        }
+
+        .card li {
+            margin-bottom: 2pt;
+        }
+
+        /* Day Cards */
+        .day-card {
+            border: 2px solid #000;
+            background: #fff;
+            break-inside: avoid;
+        }
+
+        .day-header {
+            padding: 5pt 8pt;
+            font-weight: 700;
+            font-size: 9pt;
+            text-transform: uppercase;
+        }
+
+        .day-header.coral { background: #FBEAE7; border-bottom: 2px solid #E86B5A; }
+        .day-header.golden { background: #FEF8E6; border-bottom: 2px solid #F5C542; }
+
+        .day-content {
+            padding: 6pt 8pt;
+            font-size: 8pt;
+        }
+
+        .day-content ul {
+            margin-left: 10pt;
+        }
+
+        .day-content li {
+            margin-bottom: 2pt;
+        }
+
+        /* Icon Boxes */
+        .icon-box {
+            text-align: center;
+            border: 2px solid #000;
+            padding: 6pt 4pt;
+            background: #fff;
+            break-inside: avoid;
+        }
+
+        .icon-placeholder {
+            width: 28pt;
+            height: 28pt;
+            margin: 0 auto 3pt auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14pt;
+            border-radius: 4pt;
+            background: #FBEAE7;
+            color: #E86B5A;
+        }
+
+        .icon-label {
+            font-weight: 600;
+            font-size: 7pt;
+        }
+
+        .icon-desc {
+            font-size: 6.5pt;
+            color: #5C5750;
+            margin-top: 1pt;
+        }
+
+        /* Technology Tags */
+        .tech-tag {
+            display: inline-block;
+            font-size: 7pt;
+            padding: 2pt 5pt;
+            margin: 2pt 2pt 2pt 0;
+            border-radius: 2pt;
+            font-weight: 600;
+            background: #FBEAE7;
+            color: #C05040;
+            border: 1px solid #E86B5A;
+        }
+
+        /* Credentials Box */
+        .credentials-box {
+            border: 2px solid #000;
+            background: #fff;
+            padding: 8pt;
+            break-inside: avoid;
+        }
+
+        .credentials-box .title {
+            font-weight: 700;
+            font-size: 9pt;
+            margin-bottom: 6pt;
+            text-transform: uppercase;
+        }
+
+        .credential-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6pt;
+            text-align: center;
+        }
+
+        .credential-item {
+            padding: 4pt;
+        }
+
+        .credential-number {
+            font-size: 14pt;
+            font-weight: 700;
+            color: #E86B5A;
+        }
+
+        .credential-label {
+            font-size: 6.5pt;
+            color: #5C5750;
+            margin-top: 2pt;
+        }
+
+        /* Pricing Box */
+        .pricing-box {
+            border: 3px solid #000;
+            background: #000;
+            color: #fff;
+            padding: 10pt;
+            text-align: center;
+            break-inside: avoid;
+        }
+
+        .pricing-box .price {
+            font-size: 16pt;
+            font-weight: 700;
+            margin-bottom: 3pt;
+        }
+
+        .pricing-box .details {
+            font-size: 8pt;
+            opacity: 0.9;
+        }
+
+        /* Takeaways */
+        .takeaway-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 6pt;
+            margin-bottom: 4pt;
+            font-size: 8pt;
+        }
+
+        .takeaway-check {
+            color: #7CB56B;
+            font-weight: 700;
+            font-size: 10pt;
+        }
+
+        /* Info Box */
+        .info-box {
+            border: 2px solid #000;
+            padding: 6pt 8pt;
+            background: #fff;
+            break-inside: avoid;
+        }
+
+        .info-box.coral { border-left: 4px solid #E86B5A; background: #FBEAE7; }
+
+        .info-box-title {
+            font-weight: 700;
+            font-size: 8pt;
+            margin-bottom: 3pt;
+        }
+
+        .info-box p {
+            font-size: 7.5pt;
+            margin: 0;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 10pt;
+            padding-top: 8pt;
+            border-top: 2px solid #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 7pt;
+            color: #8A847A;
+        }
+
+        footer .brand {
+            font-weight: 700;
+            color: #2A2825;
+        }
+
+        footer .contact {
+            text-align: right;
+        }
+
+        footer a {
+            color: #E86B5A;
+            text-decoration: none;
+        }
+
+        /* Print Optimization */
+        @media print {
+            body {
+                margin: 0;
+                padding: 12mm;
+                background: #F5F3EB;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .card, .day-card, .credentials-box, .pricing-box, .info-box {
+                break-inside: avoid;
+            }
+
+            .section-title {
+                break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="page-header">
+        <div class="workshop-badge">2-Day Hands-On Workshop</div>
+        <h1>AI Agent Engineering<br>for Engineering Teams</h1>
+        <div class="subtitle">Build Production-Ready AI Agents in 2 Days</div>
+        <div class="meta">Private Corporate Training | On-site or Virtual Delivery</div>
+    </div>
+
+    <!-- What You'll Build -->
+    <div class="section-title">What Your Team Will Build</div>
+
+    <div class="grid-4">
+        <div class="icon-box">
+            <div class="icon-placeholder">&#129302;</div>
+            <div class="icon-label">Working Agent</div>
+            <div class="icon-desc">Functional prototype</div>
+        </div>
+        <div class="icon-box">
+            <div class="icon-placeholder">&#128268;</div>
+            <div class="icon-label">MCP Server</div>
+            <div class="icon-desc">Custom integrations</div>
+        </div>
+        <div class="icon-box">
+            <div class="icon-placeholder">&#128101;</div>
+            <div class="icon-label">Multi-Agent</div>
+            <div class="icon-desc">Orchestration patterns</div>
+        </div>
+        <div class="icon-box">
+            <div class="icon-placeholder">&#128640;</div>
+            <div class="icon-label">Deployment</div>
+            <div class="icon-desc">Production-ready</div>
+        </div>
+    </div>
+
+    <!-- Technologies & Agenda -->
+    <div class="grid-2">
+        <div>
+            <div class="section-title">Technologies Covered</div>
+            <div class="card coral">
+                <div class="card-content">
+                    <div style="margin-bottom: 6pt;">
+                        <span class="tech-tag">Model Context Protocol (MCP)</span>
+                        <span class="tech-tag">Claude Agents SDK</span>
+                        <span class="tech-tag">OpenAI Agents SDK</span>
+                        <span class="tech-tag">LangGraph</span>
+                        <span class="tech-tag">FastMCP</span>
+                        <span class="tech-tag">Vercel Deployment</span>
+                    </div>
+                    <p style="font-size: 7.5pt; color: #5C5750;">
+                        Participants work with their preferred stack. All code templates provided in Python with full documentation.
+                    </p>
+                </div>
+            </div>
+
+            <div class="section-title">Who Should Attend</div>
+            <div class="card">
+                <div class="card-content">
+                    <ul>
+                        <li><strong>Engineering teams</strong> (5-20 developers)</li>
+                        <li><strong>AI/ML engineers</strong> building production systems</li>
+                        <li><strong>Backend developers</strong> adding AI capabilities</li>
+                        <li><strong>Tech leads</strong> evaluating agent architectures</li>
+                    </ul>
+                    <p style="margin-top: 6pt; font-size: 7pt; color: #5C5750;">
+                        Prerequisites: Python proficiency, familiarity with REST APIs
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="section-title">Workshop Agenda</div>
+
+            <div class="day-card" style="margin-bottom: 6pt;">
+                <div class="day-header coral">Day 1: Foundations & First Agent</div>
+                <div class="day-content">
+                    <ul>
+                        <li>Agent architecture fundamentals</li>
+                        <li>MCP protocol deep-dive</li>
+                        <li>Building your first MCP server</li>
+                        <li>Tool integration patterns</li>
+                        <li><strong>Hands-on:</strong> Chat application with tools</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header golden">Day 2: Production & Multi-Agent</div>
+                <div class="day-content">
+                    <ul>
+                        <li>Serverless deployment (Vercel)</li>
+                        <li>Multi-agent orchestration</li>
+                        <li>Handoffs and delegation patterns</li>
+                        <li>Security, permissions, guardrails</li>
+                        <li><strong>Capstone:</strong> End-to-end agent system</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- What You Take Away -->
+    <div class="section-title">What Your Team Takes Away</div>
+
+    <div class="grid-2">
+        <div class="card">
+            <div class="card-content">
+                <div class="takeaway-item">
+                    <span class="takeaway-check">&#10003;</span>
+                    <span><strong>Working prototype</strong> built on your tech stack</span>
+                </div>
+                <div class="takeaway-item">
+                    <span class="takeaway-check">&#10003;</span>
+                    <span><strong>7 code templates</strong> covering all major patterns</span>
+                </div>
+                <div class="takeaway-item">
+                    <span class="takeaway-check">&#10003;</span>
+                    <span><strong>Architecture decision framework</strong> for agent design</span>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <div class="takeaway-item">
+                    <span class="takeaway-check">&#10003;</span>
+                    <span><strong>Production deployment guide</strong> (Vercel, Docker)</span>
+                </div>
+                <div class="takeaway-item">
+                    <span class="takeaway-check">&#10003;</span>
+                    <span><strong>Security best practices</strong> checklist</span>
+                </div>
+                <div class="takeaway-item">
+                    <span class="takeaway-check">&#10003;</span>
+                    <span><strong>30-day Q&A access</strong> for implementation support</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Credentials & Pricing -->
+    <div class="grid-2" style="margin-top: 8pt;">
+        <div class="credentials-box">
+            <div class="title">Your Instructor</div>
+            <div class="credential-grid">
+                <div class="credential-item">
+                    <div class="credential-number">34+</div>
+                    <div class="credential-label">O'Reilly Courses</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-number">4,935</div>
+                    <div class="credential-label">Professionals Trained</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-number">9.37</div>
+                    <div class="credential-label">Avg Rating /10</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-number">91%</div>
+                    <div class="credential-label">Excellent Ratings</div>
+                </div>
+            </div>
+            <p style="font-size: 7pt; color: #5C5750; margin-top: 6pt; text-align: center;">
+                Lucas Soares | O'Reilly Media Instructor | Author, "Skills for AI Agents" (O'Reilly)
+            </p>
+        </div>
+
+        <div class="pricing-box">
+            <div class="price">&#8364;6,000 - &#8364;10,000</div>
+            <div class="details">Up to 15 participants | 2 days | On-site or virtual</div>
+            <div style="font-size: 7pt; margin-top: 4pt; opacity: 0.8;">
+                Travel expenses additional for on-site delivery
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="info-box coral" style="margin-top: 8pt;">
+        <div class="info-box-title">Ready to Upskill Your Engineering Team?</div>
+        <p>Schedule a 20-minute discovery call to discuss your team's goals and customize the workshop agenda to your tech stack and use cases.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <span class="brand">AUTOMATA LEARNING LAB</span> | Corporate Training
+        </div>
+        <div class="contact">
+            <a href="mailto:lucasenkrateia@gmail.com">lucasenkrateia@gmail.com</a> |
+            <a href="https://www.linkedin.com/in/lucas-soares-969044167/">LinkedIn</a>
+        </div>
+    </footer>
+
+</body>
+</html>
