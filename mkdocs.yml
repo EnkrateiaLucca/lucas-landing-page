@@ -1,6 +1,7 @@
 site_name: Lucas Soares
+site_url: https://enkrateialucca.github.io/lucas-landing-page/
 repo_url: https://github.com/EnkrateiaLucca/lucas-landing-page.git
-# site_url: https://lbns.co
+# future custom domain: https://lbns.co
 
 nav:
   - Home: index.md
@@ -21,7 +22,12 @@ plugins:
       archive: true
       categories: true
       pagination: true
-  - search      
+  - search
+  - rss:
+      match_path: blog/posts/.*
+      abstract_chars_count: -1
+      date_from_meta:
+        as_creation: date
 
 extra_css:
   - style.css
