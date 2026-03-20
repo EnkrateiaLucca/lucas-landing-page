@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Strategy Briefing for Leadership - Workshop Overview</title>
+    <style>
+        /* ========================================
+           AUTOMATA LEARNING LAB BRAND TEMPLATE
+           Workshop C: Golden Accent #F5C542
+           ======================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 12mm;
+            @top-left { content: none; }
+            @top-center { content: none; }
+            @top-right { content: none; }
+            @bottom-left { content: none; }
+            @bottom-center { content: none; }
+            @bottom-right { content: none; }
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', 'Helvetica', 'Arial', sans-serif;
+            font-size: 9pt;
+            line-height: 1.45;
+            color: #2A2825;
+            background: #F5F3EB;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 12mm;
+        }
+
+        /* Header */
+        .page-header {
+            text-align: center;
+            padding-bottom: 10pt;
+            margin-bottom: 10pt;
+            border-bottom: 3px solid #000;
+        }
+
+        .workshop-badge {
+            display: inline-block;
+            background: #F5C542;
+            color: #000;
+            font-size: 7pt;
+            font-weight: 700;
+            padding: 3pt 10pt;
+            text-transform: uppercase;
+            letter-spacing: 1pt;
+            margin-bottom: 6pt;
+        }
+
+        .page-header h1 {
+            font-size: 20pt;
+            font-weight: 700;
+            margin-bottom: 4pt;
+            color: #000;
+            line-height: 1.2;
+        }
+
+        .page-header .subtitle {
+            font-size: 11pt;
+            color: #5C5750;
+            margin-bottom: 4pt;
+        }
+
+        .page-header .meta {
+            font-size: 8pt;
+            color: #8A847A;
+        }
+
+        /* Section Headers */
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            margin: 10pt 0 6pt 0;
+            padding: 4pt 8pt;
+            background: #000;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.5pt;
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8pt;
+            margin-bottom: 8pt;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6pt;
+            margin-bottom: 8pt;
+        }
+
+        /* Cards */
+        .card {
+            border: 2px solid #000;
+            padding: 8pt;
+            background: #fff;
+            break-inside: avoid;
+        }
+
+        .card.golden { border-left: 5px solid #F5C542; }
+        .card.sage { border-left: 5px solid #7CB56B; }
+
+        .card-title {
+            font-size: 10pt;
+            font-weight: 700;
+            margin-bottom: 5pt;
+            padding-bottom: 4pt;
+            border-bottom: 1px solid #DDD9D2;
+        }
+
+        .card-content {
+            font-size: 8pt;
+        }
+
+        .card ul {
+            margin-left: 10pt;
+            margin-top: 3pt;
+        }
+
+        .card li {
+            margin-bottom: 2pt;
+        }
+
+        /* Agenda Timeline */
+        .agenda-item {
+            border: 2px solid #000;
+            background: #fff;
+            margin-bottom: 6pt;
+            break-inside: avoid;
+            display: grid;
+            grid-template-columns: 50pt 1fr;
+        }
+
+        .agenda-time {
+            background: #FEF8E6;
+            border-right: 2px solid #F5C542;
+            padding: 6pt;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 8pt;
+            color: #9A7800;
+        }
+
+        .agenda-content {
+            padding: 6pt 8pt;
+        }
+
+        .agenda-content .title {
+            font-weight: 700;
+            font-size: 9pt;
+            margin-bottom: 2pt;
+        }
+
+        .agenda-content .desc {
+            font-size: 7.5pt;
+            color: #5C5750;
+        }
+
+        /* Icon Boxes */
+        .icon-box {
+            text-align: center;
+            border: 2px solid #000;
+            padding: 6pt 4pt;
+            background: #fff;
+            break-inside: avoid;
+        }
+
+        .icon-placeholder {
+            width: 28pt;
+            height: 28pt;
+            margin: 0 auto 3pt auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14pt;
+            border-radius: 4pt;
+            background: #FEF8E6;
+            color: #D4A800;
+        }
+
+        .icon-label {
+            font-weight: 600;
+            font-size: 7pt;
+        }
+
+        .icon-desc {
+            font-size: 6.5pt;
+            color: #5C5750;
+            margin-top: 1pt;
+        }
+
+        /* Question Box */
+        .question-box {
+            border: 2px solid #000;
+            background: #fff;
+            padding: 8pt;
+            break-inside: avoid;
+        }
+
+        .question-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 6pt;
+            margin-bottom: 4pt;
+            font-size: 8pt;
+        }
+
+        .question-icon {
+            color: #F5C542;
+            font-weight: 700;
+            font-size: 10pt;
+        }
+
+        /* Credentials Box */
+        .credentials-box {
+            border: 2px solid #000;
+            background: #fff;
+            padding: 8pt;
+            break-inside: avoid;
+        }
+
+        .credentials-box .title {
+            font-weight: 700;
+            font-size: 9pt;
+            margin-bottom: 6pt;
+            text-transform: uppercase;
+        }
+
+        .credential-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6pt;
+            text-align: center;
+        }
+
+        .credential-item {
+            padding: 4pt;
+        }
+
+        .credential-number {
+            font-size: 14pt;
+            font-weight: 700;
+            color: #D4A800;
+        }
+
+        .credential-label {
+            font-size: 6.5pt;
+            color: #5C5750;
+            margin-top: 2pt;
+        }
+
+        /* Pricing Box */
+        .pricing-box {
+            border: 3px solid #000;
+            background: #000;
+            color: #fff;
+            padding: 10pt;
+            text-align: center;
+            break-inside: avoid;
+        }
+
+        .pricing-box .price {
+            font-size: 16pt;
+            font-weight: 700;
+            margin-bottom: 3pt;
+        }
+
+        .pricing-box .details {
+            font-size: 8pt;
+            opacity: 0.9;
+        }
+
+        /* Takeaways */
+        .takeaway-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 6pt;
+            margin-bottom: 4pt;
+            font-size: 8pt;
+        }
+
+        .takeaway-check {
+            color: #7CB56B;
+            font-weight: 700;
+            font-size: 10pt;
+        }
+
+        /* Info Box */
+        .info-box {
+            border: 2px solid #000;
+            padding: 6pt 8pt;
+            background: #fff;
+            break-inside: avoid;
+        }
+
+        .info-box.golden { border-left: 4px solid #F5C542; background: #FEF8E6; }
+
+        .info-box-title {
+            font-weight: 700;
+            font-size: 8pt;
+            margin-bottom: 3pt;
+        }
+
+        .info-box p {
+            font-size: 7.5pt;
+            margin: 0;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 10pt;
+            padding-top: 8pt;
+            border-top: 2px solid #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 7pt;
+            color: #8A847A;
+        }
+
+        footer .brand {
+            font-weight: 700;
+            color: #2A2825;
+        }
+
+        footer .contact {
+            text-align: right;
+        }
+
+        footer a {
+            color: #D4A800;
+            text-decoration: none;
+        }
+
+        /* Print Optimization */
+        @media print {
+            body {
+                margin: 0;
+                padding: 12mm;
+                background: #F5F3EB;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .card, .agenda-item, .credentials-box, .pricing-box, .info-box {
+                break-inside: avoid;
+            }
+
+            .section-title {
+                break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="page-header">
+        <div class="workshop-badge">Executive Briefing | 2-3 Hours</div>
+        <h1>AI Strategy Briefing<br>for Leadership</h1>
+        <div class="subtitle">Clear Assessment of AI Value vs. Hype</div>
+        <div class="meta">Private Corporate Briefing | On-site or Virtual Delivery</div>
+    </div>
+
+    <!-- What This Delivers -->
+    <div class="section-title">What This Briefing Delivers</div>
+
+    <div class="grid-4">
+        <div class="icon-box">
+            <div class="icon-placeholder">&#128269;</div>
+            <div class="icon-label">Reality Check</div>
+            <div class="icon-desc">Hype vs. actual value</div>
+        </div>
+        <div class="icon-box">
+            <div class="icon-placeholder">&#128200;</div>
+            <div class="icon-label">ROI Assessment</div>
+            <div class="icon-desc">Concrete use cases</div>
+        </div>
+        <div class="icon-box">
+            <div class="icon-placeholder">&#128737;</div>
+            <div class="icon-label">Risk Framework</div>
+            <div class="icon-desc">Adoption considerations</div>
+        </div>
+        <div class="icon-box">
+            <div class="icon-placeholder">&#128506;</div>
+            <div class="icon-label">90-Day Roadmap</div>
+            <div class="icon-desc">Actionable next steps</div>
+        </div>
+    </div>
+
+    <!-- Agenda & Questions -->
+    <div class="grid-2">
+        <div>
+            <div class="section-title">Agenda (2-3 Hours)</div>
+
+            <div class="agenda-item">
+                <div class="agenda-time">30 min</div>
+                <div class="agenda-content">
+                    <div class="title">AI Landscape Reality Check</div>
+                    <div class="desc">What reasoning models actually do. Cutting through vendor hype. Where AI delivers real value today.</div>
+                </div>
+            </div>
+
+            <div class="agenda-item">
+                <div class="agenda-time">45 min</div>
+                <div class="agenda-content">
+                    <div class="title">Value Assessment Framework</div>
+                    <div class="desc">High-ROI use cases by department. Total cost of ownership. Build vs. buy analysis.</div>
+                </div>
+            </div>
+
+            <div class="agenda-item">
+                <div class="agenda-time">45 min</div>
+                <div class="agenda-content">
+                    <div class="title">Adoption Roadmap Workshop</div>
+                    <div class="desc">Team readiness assessment. Phased implementation approach. Resource requirements.</div>
+                </div>
+            </div>
+
+            <div class="agenda-item">
+                <div class="agenda-time">30 min</div>
+                <div class="agenda-content">
+                    <div class="title">Q&A and Next Steps</div>
+                    <div class="desc">Open discussion. Specific recommendations for your organization.</div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="section-title">Key Questions Answered</div>
+
+            <div class="question-box">
+                <div class="question-item">
+                    <span class="question-icon">?</span>
+                    <span><strong>"Is AI ready for our use case?"</strong><br>Honest assessment based on current capabilities, not roadmap promises.</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-icon">?</span>
+                    <span><strong>"Build vs. buy vs. partner?"</strong><br>Framework for evaluating options based on your team's capacity.</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-icon">?</span>
+                    <span><strong>"What skills does our team need?"</strong><br>Realistic training requirements, not vendor-driven certifications.</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-icon">?</span>
+                    <span><strong>"How do we measure AI ROI?"</strong><br>Practical metrics that tie to business outcomes.</span>
+                </div>
+            </div>
+
+            <div class="section-title">Who Should Attend</div>
+            <div class="card">
+                <div class="card-content">
+                    <ul>
+                        <li><strong>C-suite executives</strong> (CEO, CTO, COO)</li>
+                        <li><strong>VPs and Directors</strong></li>
+                        <li><strong>Department heads</strong></li>
+                        <li><strong>AI/Digital transformation leads</strong></li>
+                    </ul>
+                    <p style="margin-top: 4pt; font-size: 7pt; color: #5C5750;">
+                        Ideal group size: 5-10 participants for interactive discussion.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- What You Take Away -->
+    <div class="section-title">What Your Leadership Team Takes Away</div>
+
+    <div class="grid-2">
+        <div class="card">
+            <div class="card-content">
+                <div class="takeaway-item">
+                    <span class="takeaway-check">&#10003;</span>
+                    <span><strong>AI readiness assessment</strong> specific to your organization</span>
+                </div>
+                <div class="takeaway-item">
+                    <span class="takeaway-check">&#10003;</span>
+                    <span><strong>Use case prioritization matrix</strong> ranked by ROI potential</span>
+                </div>
+                <div class="takeaway-item">
+                    <span class="takeaway-check">&#10003;</span>
+                    <span><strong>Build vs. buy decision framework</strong></span>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <div class="takeaway-item">
+                    <span class="takeaway-check">&#10003;</span>
+                    <span><strong>90-day action plan</strong> with concrete first steps</span>
+                </div>
+                <div class="takeaway-item">
+                    <span class="takeaway-check">&#10003;</span>
+                    <span><strong>Risk mitigation checklist</strong></span>
+                </div>
+                <div class="takeaway-item">
+                    <span class="takeaway-check">&#10003;</span>
+                    <span><strong>Follow-up consultation</strong> (30 min, within 2 weeks)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Credentials & Pricing -->
+    <div class="grid-2" style="margin-top: 8pt;">
+        <div class="credentials-box">
+            <div class="title">Your Facilitator</div>
+            <div class="credential-grid">
+                <div class="credential-item">
+                    <div class="credential-number">34+</div>
+                    <div class="credential-label">O'Reilly Courses</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-number">4,935</div>
+                    <div class="credential-label">Professionals Trained</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-number">9.37</div>
+                    <div class="credential-label">Avg Rating /10</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-number">91%</div>
+                    <div class="credential-label">Excellent Ratings</div>
+                </div>
+            </div>
+            <p style="font-size: 7pt; color: #5C5750; margin-top: 6pt; text-align: center;">
+                Lucas Soares | O'Reilly Media Instructor | Author, "Skills for AI Agents" (O'Reilly)<br>
+                MSc Research, Champalimaud Centre for the Unknown
+            </p>
+        </div>
+
+        <div class="pricing-box">
+            <div class="price">&#8364;3,000 - &#8364;5,000</div>
+            <div class="details">Up to 10 executives | 2-3 hours</div>
+            <div style="font-size: 7pt; margin-top: 4pt; opacity: 0.8;">
+                On-site or virtual | Includes follow-up consultation
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="info-box golden" style="margin-top: 8pt;">
+        <div class="info-box-title">Ready for an Honest AI Assessment?</div>
+        <p>Schedule a 15-minute call to discuss your organization's AI questions and determine if this briefing is the right fit for your leadership team.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <span class="brand">AUTOMATA LEARNING LAB</span> | Corporate Training
+        </div>
+        <div class="contact">
+            <a href="mailto:lucasenkrateia@gmail.com">lucasenkrateia@gmail.com</a> |
+            <a href="https://www.linkedin.com/in/lucas-soares-969044167/">LinkedIn</a>
+        </div>
+    </footer>
+
+</body>
+</html>
