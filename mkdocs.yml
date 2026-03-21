@@ -12,6 +12,9 @@ nav:
 
 
 
+hooks:
+  - hooks/rss_cleanup.py
+
 plugins:
   - blog:
       post_date_format: medium
