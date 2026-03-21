@@ -1,16 +1,113 @@
 """
-MkDocs hook: strip headerlink anchors from RSS feeds.
+MkDocs hook: clean code blocks and headerlinks from RSS feeds.
 
-MkDocs Material adds ¶ permalink anchors to every heading via `toc.permalink: true`.
-These bleed into the RSS feed as broken relative links (e.g. href="#some-heading").
-This hook removes them from the generated XML files after each build.
+Problems solved:
+  1. MkDocs Material adds ¶ permalink anchors to headings → broken relative links in RSS.
+  2. Pygments syntax-highlight <span> tags clutter code blocks with CSS-class markup
+     that is meaningless without an external stylesheet (e.g. Gmail / ConvertKit).
+  3. The RSS plugin's Jinja2 template strips all newlines, collapsing code to one line.
+  4. <pre> tags have no inline styles → email clients don't apply monospace/pre-wrap.
+
+Strategy (two-phase):
+  Phase 1 — on_page_content (priority 0, runs before RSS plugin at priority -75):
+    • Clean the rendered page HTML.
+    • Strip Pygments <span> tags from code blocks.
+    • Add inline styles to <pre> tags (survives Gmail's CSS stripping).
+    • Replace \\n inside code blocks with ##RSS_NL## so they survive the RSS
+      plugin's newline-stripping Jinja2 pass.
+    • Store the result in page.meta["rss"]["feed_description"] — the RSS plugin
+      reads this field and skips its own content processing.
+    • Return the original output unchanged (site pages are NOT affected).
+
+  Phase 2 — on_post_build:
+    • Replace every ##RSS_NL## placeholder with a real newline character.
+    • Strip any remaining headerlinks as a safety net.
 """
 
 import os
 import re
 
+# Gmail strips external stylesheets; inline styles are the only reliable option.
+PRE_STYLE = (
+    "font-family:'Courier New',Courier,monospace;"
+    "font-size:13px;"
+    "line-height:1.6;"
+    "background-color:#f6f8fa;"
+    "padding:16px;"
+    "border-radius:6px;"
+    "white-space:pre-wrap;"
+    "border:1px solid #e1e4e8;"
+    "display:block;"
+    "overflow-x:auto;"
+)
+
+# Placeholder that survives the RSS plugin's newline-stripping Jinja2 pass.
+# Contains no XML/HTML special characters, so it passes through escaping unchanged.
+_NL = "##RSS_NL##"
+
+
+def _process_code_block(match):
+    """Strip Pygments spans, add inline styles, encode newlines as placeholder."""
+    block = match.group(0)
+    # Remove Pygments syntax-highlight span tags (keep text content and \n between them)
+    block = re.sub(r"<span[^>]*>", "", block)
+    block = block.replace("</span>", "")
+    # Style the <pre> tag for email clients
+    block = block.replace("<pre>", f'<pre style="{PRE_STYLE}">')
+    # Encode newlines so they survive the RSS plugin's compression pass
+    block = block.replace("\n", _NL)
+    return block
+
+
+def _clean_for_rss(html):
+    """Return cleaned HTML suitable for RSS description content."""
+    # 1. Remove headerlink anchors (the ¶ permalink symbols added by toc.permalink)
+    html = re.sub(
+        r'<a[^>]*class="headerlink"[^>]*>.*?</a>',
+        "",
+        html,
+        flags=re.DOTALL,
+    )
+    # 2. Process code blocks: strip spans, add inline styles, preserve newlines
+    html = re.sub(
+        r'<div class="highlight">.*?</div>',
+        _process_code_block,
+        html,
+        flags=re.DOTALL,
+    )
+    # 3. Remove the <!-- more --> excerpt marker (MkDocs artifact, noise in email)
+    html = html.replace("<!-- more -->", "")
+    return html
+
+
+def on_page_content(output, page, config, **kwargs):
+    """
+    Intercept page HTML before the RSS plugin processes it.
+
+    Our hook runs at default priority 0; the RSS plugin runs at -75 (lower = later).
+    By setting page.meta["rss"]["feed_description"] here, the RSS plugin will use
+    our pre-cleaned HTML and skip its own content extraction entirely.
+
+    The original `output` is returned unchanged so site pages are unaffected.
+    """
+    # Only process pages included in the RSS feed
+    if not re.search(r"blog/posts/", page.file.src_path):
+        return output
+
+    # Respect any feed_description the author set manually in front matter
+    if page.meta.get("rss", {}).get("feed_description"):
+        return output
+
+    cleaned = _clean_for_rss(output)
+    page.meta.setdefault("rss", {})["feed_description"] = cleaned
+    return output  # site page is untouched
+
 
 def on_post_build(config, **kwargs):
+    """
+    After the RSS plugin generates the XML files, restore newlines inside code
+    blocks and strip any remaining headerlinks.
+    """
     site_dir = config["site_dir"]
 
     for feed_file in ("feed_rss_created.xml", "feed_rss_updated.xml"):
@@ -21,22 +118,24 @@ def on_post_build(config, **kwargs):
         with open(feed_path, "r", encoding="utf-8") as f:
             content = f.read()
 
-        # The RSS description content is HTML-escaped inside XML, so < > " appear as
-        # &lt; &gt; &#34; / &quot;.  The headerlink pattern looks like:
-        #   &lt;a class=&#34;headerlink&#34; href=&#34;#slug&#34; title=...&gt;&amp;para;&lt;/a&gt;
-        #
-        # Tempered greedy token (?:(?!&gt;).)* matches "any char not starting &gt;"
-        # so we stay inside the opening tag without crossing into its body.
-        cleaned = re.sub(
-            r'&lt;a\b(?:(?!&gt;).)*?headerlink(?:(?!&gt;).)*?&gt;.*?&lt;/a&gt;',
+        # Restore encoded newlines inside code blocks
+        nl_count = content.count(_NL)
+        content = content.replace(_NL, "\n")
+
+        # Safety net: strip headerlinks that slipped through (escaped HTML form)
+        hl_count = content.count("headerlink")
+        content = re.sub(
+            r"&lt;a\b(?:(?!&gt;).)*?headerlink(?:(?!&gt;).)*?&gt;.*?&lt;/a&gt;",
             "",
             content,
             flags=re.DOTALL,
         )
 
-        removed = content.count("headerlink") - cleaned.count("headerlink")
-
         with open(feed_path, "w", encoding="utf-8") as f:
-            f.write(cleaned)
+            f.write(content)
 
-        print(f"[rss-cleanup] {feed_file}: removed {removed} headerlink anchor(s)")
+        print(
+            f"[rss-cleanup] {feed_file}: "
+            f"restored {nl_count} newlines in code blocks, "
+            f"removed {hl_count} headerlinks"
+        )

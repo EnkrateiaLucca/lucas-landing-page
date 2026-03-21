@@ -28,7 +28,6 @@ plugins:
   - search
   - rss:
       match_path: blog/posts/.*
-      abstract_chars_count: -1
       date_from_meta:
         as_creation: date
 
