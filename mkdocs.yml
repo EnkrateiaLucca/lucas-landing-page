@@ -9,6 +9,8 @@ nav:
     - blog/index.md
   - Courses:
     - courses/index.md
+  - Corporate Trainings:
+    - corporate-training.md
 
 
 
