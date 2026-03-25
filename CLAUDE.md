@@ -4,12 +4,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is Lucas Soares' personal blog and landing page built with MkDocs and Material theme. The site features technical articles on AI, machine learning, and software engineering, with a focus on educational content and documentation.
+Lucas Soares' personal blog and landing page built with MkDocs and Material theme. Features technical articles on AI, machine learning, and software engineering.
 
 ## Commands
 
 ### Development
 ```bash
+# Install dependencies
+pip install mkdocs-material
+
 # Start development server with live reload
 mkdocs serve
 
@@ -32,48 +35,46 @@ mkdocs gh-deploy --force
 ## Architecture
 
 ### Tech Stack
-- **Static Site Generator**: MkDocs 1.6.1
-- **Theme**: Material for MkDocs 9.5.45
+- **Static Site Generator**: MkDocs with Material theme
 - **Hosting**: GitHub Pages (gh-pages branch)
 - **Content Format**: Markdown with YAML front matter
 
 ### Project Structure
 ```
-docs/                     # All content files
-├── blog/                # Blog system
+docs/
+├── blog/
 │   ├── posts/          # Blog posts (YYYY-MM-DD-title.md format)
-│   ├── assets/         # Shared images and resources
-│   └── .authors.yml    # Author metadata
-├── about.md            # About page
-├── index.md            # Homepage content
-└── style.css           # Custom CSS overrides
+│   └── assets/         # Shared images and resources
+├── courses/
+│   └── index.md        # Courses listing page
+├── about.md
+├── index.md
+└── style.css           # Custom CSS overrides (typography/spacing)
 
 mkdocs.yml              # Main configuration
-requirements.txt        # Python dependencies
 ```
 
-### Blog Post Structure
-Posts require specific front matter:
+### Blog Post Front Matter
 ```yaml
 ---
-authors:
-  - lucassoares
-date: YYYY-MM-DD
-slug: url-slug
 title: Post Title
+date: YYYY-MM-DD
+slug: url-slug          # Optional, defaults to filename
 categories:
   - Category Name
 tags:
   - tag1
-  - tag2
-image: blog/assets/image.png  # Optional
+excerpt: One-line summary shown in post listings
 ---
+
+<!-- more -->           # Required: marks excerpt boundary
 ```
 
-Posts must include `<!-- more -->` to mark the excerpt boundary.
+The `excerpt:` field and `<!-- more -->` are both used — `excerpt` is metadata, `<!-- more -->` marks the content split. Both are needed.
 
-### Content Categories
+### Active Content Categories
 - AI Best Practices
+- LLM Development
 - Technical Guides
 - Machine Learning Fundamentals
 - Learning Resources
@@ -82,28 +83,13 @@ Posts must include `<!-- more -->` to mark the excerpt boundary.
 
 ### Key Configuration (mkdocs.yml)
 
-**Plugins Enabled:**
-- `blog`: Handles blog functionality with date-based URLs
-- `search`: Site-wide search
-- `meta`: Process meta tags
-- `glightbox`: Image lightbox functionality
+**Plugins:** `blog` (date-based URLs `YYYY/MM/DD/{slug}/`), `search`
 
-**Blog Configuration:**
-- Posts per page: 10
-- URL format: `YYYY/MM/DD/{slug}/`
-- Archives enabled with yearly/monthly views
-- Categories and tags enabled
-- Pagination enabled
+**Notable markdown extensions:** `admonition`, `footnotes`, `pymdownx.arithmatex` (math), `pymdownx.superfences` (code blocks), `pymdownx.tabbed`, `pymdownx.tasklist`
 
 ### Development Notes
 
-- All blog images should be placed in `docs/blog/assets/` and referenced relatively
-- Site builds to `site/` directory (gitignored)
-- Custom styling in `docs/style.css` - mainly typography and spacing adjustments
-- Navigation defined in mkdocs.yml - includes auto-generated blog sections
-- Author information centralized in `docs/blog/.authors.yml`
-
-### Asset Management
-- Images: Store in `docs/blog/assets/` with descriptive names
-- Use relative paths in Markdown: `![Alt text](../assets/image.png)`
-- Optimize images before committing (prefer WebP/PNG for diagrams, JPEG for photos)
+- Site navigation is defined in `mkdocs.yml` under `nav:` — add new top-level sections there
+- Images go in `docs/blog/assets/`; reference with relative paths: `../assets/image.png`
+- Site builds to `site/` (gitignored)
+- URL format: `YYYY/MM/DD/{slug}/` — changing a slug or date breaks existing links
