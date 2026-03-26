@@ -26,6 +26,7 @@ Strategy (two-phase):
 
 import os
 import re
+from urllib.parse import urljoin
 
 # Gmail strips external stylesheets; inline styles are the only reliable option.
 PRE_STYLE = (
@@ -41,9 +42,73 @@ PRE_STYLE = (
     "overflow-x:auto;"
 )
 
+TABLE_STYLE = (
+    "border-collapse:collapse;"
+    "width:100%;"
+    "margin:16px 0;"
+    "font-size:14px;"
+    "border:1px solid #e1e4e8;"
+)
+
+TH_STYLE = (
+    "background-color:#f6f8fa;"
+    "border:1px solid #e1e4e8;"
+    "padding:8px 12px;"
+    "text-align:left;"
+    "font-weight:600;"
+)
+
+TD_STYLE = (
+    "border:1px solid #e1e4e8;"
+    "padding:8px 12px;"
+    "vertical-align:top;"
+)
+
+IMG_STYLE = (
+    "max-width:100%;"
+    "height:auto;"
+    "display:block;"
+    "margin:16px 0;"
+)
+
 # Placeholder that survives the RSS plugin's newline-stripping Jinja2 pass.
 # Contains no XML/HTML special characters, so it passes through escaping unchanged.
 _NL = "##RSS_NL##"
+
+
+def _add_style(tag, style):
+    """Inject an inline style attribute into an HTML opening tag string."""
+    # If the tag already has a style attribute, prepend to it
+    if re.search(r'\bstyle\s*=', tag):
+        return re.sub(r'style\s*=\s*"', f'style="{style}', tag)
+    # Otherwise insert before the closing >
+    return re.sub(r'\s*/?>', f' style="{style}">', tag, count=1)
+
+
+def _style_tables(html):
+    """Add inline styles to table elements so Gmail renders them correctly."""
+    html = re.sub(r'<table\b[^>]*>', lambda m: _add_style(m.group(0), TABLE_STYLE), html)
+    html = re.sub(r'<th\b[^>]*>', lambda m: _add_style(m.group(0), TH_STYLE), html)
+    html = re.sub(r'<td\b[^>]*>', lambda m: _add_style(m.group(0), TD_STYLE), html)
+    return html
+
+
+def _fix_images(html, page_url):
+    """Convert relative img src paths to absolute URLs and add responsive inline styles."""
+    def _process_img(match):
+        tag = match.group(0)
+        # Resolve relative src to absolute URL
+        src_match = re.search(r'src=["\']([^"\']+)["\']', tag)
+        if src_match:
+            src = src_match.group(1)
+            if not src.startswith(("http://", "https://", "//")):
+                abs_src = urljoin(page_url, src)
+                tag = tag.replace(src_match.group(1), abs_src)
+        # Add responsive inline styles
+        tag = _add_style(tag, IMG_STYLE)
+        return tag
+
+    return re.sub(r'<img\b[^>]*/?>', _process_img, html)
 
 
 def _process_code_block(match):
@@ -59,7 +124,7 @@ def _process_code_block(match):
     return block
 
 
-def _clean_for_rss(html):
+def _clean_for_rss(html, page_url):
     """Return cleaned HTML suitable for RSS description content."""
     # 1. Remove headerlink anchors (the ¶ permalink symbols added by toc.permalink)
     html = re.sub(
@@ -75,7 +140,11 @@ def _clean_for_rss(html):
         html,
         flags=re.DOTALL,
     )
-    # 3. Remove the <!-- more --> excerpt marker (MkDocs artifact, noise in email)
+    # 3. Style tables with inline CSS for email clients
+    html = _style_tables(html)
+    # 4. Fix images: resolve relative src paths and add responsive styles
+    html = _fix_images(html, page_url)
+    # 5. Remove the <!-- more --> excerpt marker (MkDocs artifact, noise in email)
     html = html.replace("<!-- more -->", "")
     return html
 
@@ -98,7 +167,7 @@ def on_page_content(output, page, config, **kwargs):
     if page.meta.get("rss", {}).get("feed_description"):
         return output
 
-    cleaned = _clean_for_rss(output)
+    cleaned = _clean_for_rss(output, page.canonical_url)
     page.meta.setdefault("rss", {})["feed_description"] = cleaned
     return output  # site page is untouched
 
