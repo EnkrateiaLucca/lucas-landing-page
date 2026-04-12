@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://enkrateialucca.github.io/lucas-landing-page/blog/2025/02/02/quick-tips-on-using-llms-effectively/">
+        <link rel="canonical" href="https://enkrateialucca.github.io/lucas-landing-page/blog/2026/04/12/building-a-local-document-search-engine/">
       
       
-        <link rel="prev" href="../patterns-for-llm-usage/">
+        <link rel="prev" href="../../../03/23/building-real-world-claude-code-skills-spreadsheets-and-pdfs/">
       
-      
-        <link rel="next" href="../../10/an-intuitive-introduction-to-langgraph/">
       
       
         <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../../feed_rss_created.xml">
@@ -25,7 +23,7 @@
     
     
       
-        <title>Quick Tips on Using LLMs Effectively - Lucas Soares</title>
+        <title>I Tested 3 Local Search Engines on My Notes. Here's What Actually Works. - Lucas Soares</title>
       
     
     
@@ -77,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quick-tips-on-using-llms-effectively" class="md-skip">
+        <a href="#i-tested-3-local-search-engines-on-my-notes-heres-what-actually-works" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Quick Tips on Using LLMs Effectively
+              I Tested 3 Local Search Engines on My Notes. Here's What Actually Works.
             
           </span>
         </div>
@@ -953,7 +951,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2025-02-02 00:00:00+00:00" class="md-ellipsis">Feb 2, 2025</time>
+                        <time datetime="2026-04-12 00:00:00+00:00" class="md-ellipsis">Apr 12, 2026</time>
                       </div>
                     </li>
                     
@@ -965,8 +963,8 @@
                             in
                             
                               <a href="../../../../category/ai-best-practices/">AI Best Practices</a>, 
-                              <a href="../../../../category/llm-development/">LLM Development</a>, 
-                              <a href="../../../../category/technical-guides/">Technical Guides</a></span>
+                              <a href="../../../../category/technical-guides/">Technical Guides</a>, 
+                              <a href="../../../../category/software-engineering/">Software Engineering</a></span>
                         </div>
                       </li>
                     
@@ -977,7 +975,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              2 min read
+                              5 min read
                             
                           </span>
                         </div>
@@ -1006,45 +1004,120 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prompt-iteratively" class="md-nav__link">
+  <a href="#the-problem-with-keyword-search" class="md-nav__link">
     <span class="md-ellipsis">
-      Prompt Iteratively
+      The Problem with Keyword Search
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-llms-as-assistants-not-as-replacements" class="md-nav__link">
+  <a href="#the-three-approaches" class="md-nav__link">
     <span class="md-ellipsis">
-      Use LLMs as assistants not as replacements
+      The Three Approaches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Three Approaches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-litesearch-pure-semantic-vector-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. litesearch — Pure Semantic Vector Search
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-an-agentic-search-cli-built-from-scratch" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. An Agentic Search CLI (Built from Scratch)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-ck-hybrid-bm25-vector-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. ck — Hybrid BM25 + Vector Search
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Results
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#speed-ck-destroys-everything-else" class="md-nav__link">
+    <span class="md-ellipsis">
+      Speed: ck Destroys Everything Else
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-llm-agent-was-the-worst-performer" class="md-nav__link">
+    <span class="md-ellipsis">
+      The LLM Agent Was the Worst Performer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direct-semantic-search-beat-the-llm-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direct Semantic Search Beat the LLM Agent
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-per-query-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Per-Query Breakdown
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ask-for-multiple-options" class="md-nav__link">
+  <a href="#what-im-actually-using-now" class="md-nav__link">
     <span class="md-ellipsis">
-      Ask for Multiple Options
+      What I'm Actually Using Now
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-it-to-explore-and-not-just-for-quick-answers" class="md-nav__link">
+  <a href="#the-takeaway" class="md-nav__link">
     <span class="md-ellipsis">
-      Use it to Explore and Not Just for Quick Answers
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-and-experiment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Explore and Experiment
+      The Takeaway
     </span>
   </a>
   
@@ -1068,37 +1141,152 @@
   
 
 
+<h1 id="i-tested-3-local-search-engines-on-my-notes-heres-what-actually-works">I Tested 3 Local Search Engines on My Notes. Here's What Actually Works.<a class="headerlink" href="#i-tested-3-local-search-engines-on-my-notes-heres-what-actually-works" title="Permanent link">&para;</a></h1>
+<p>I have almost 2,000 notes in my Obsidian vault. PDFs of research papers, course notes, random ideas, technical references. And every time I need to find something specific — a quote from a paper, a definition I wrote down months ago, a concept I know I captured somewhere — I end up scrolling, guessing filenames, or running basic text searches that return everything except what I need.</p>
+<p>So I decided to build and benchmark three fundamentally different approaches to local document search, all running 100% on my machine. No cloud APIs. No sending my notes anywhere. Just fast, local retrieval.</p>
 <!-- more -->
 
-<h1 id="quick-tips-on-using-llms-effectively"><strong>Quick Tips on Using LLMs Effectively</strong><a class="headerlink" href="#quick-tips-on-using-llms-effectively" title="Permanent link">&para;</a></h1>
-<p>All right, this is going to be my own attempt at compiling some fun examples of how to prompt LLM models effectively to do useful stuff.</p>
-<h2 id="prompt-iteratively"><strong>Prompt Iteratively</strong><a class="headerlink" href="#prompt-iteratively" title="Permanent link">&para;</a></h2>
-<p>I think it was Jeremy Howard who coined this term <a href="https://arc.net/l/quote/vjuccuvd">'Dialog Engineering'</a> where you build and engineer things through talking to an LLM in small steps.</p>
-<p>This could not be more true. Prompt atomically, for example: instead of asking a model to build a 'quiz app' maybe ask the model to:</p>
+<h2 id="the-problem-with-keyword-search">The Problem with Keyword Search<a class="headerlink" href="#the-problem-with-keyword-search" title="Permanent link">&para;</a></h2>
+<p>Obsidian's built-in search is keyword-based. If I search for "cognitive endurance," it finds it. But if I search for "the ability to sustain mental effort over time" — which is exactly what cognitive endurance means — it finds nothing. The words don't match even though the meaning does.</p>
+<p>I wanted something that understands what I'm <em>asking</em>, not just what I'm <em>typing</em>. And I wanted it in under a second.</p>
+<h2 id="the-three-approaches">The Three Approaches<a class="headerlink" href="#the-three-approaches" title="Permanent link">&para;</a></h2>
+<p>I set up a proper experiment: 40 documents (10 PDFs + 30 markdown notes), 10 test queries spanning exact phrases, conceptual questions, cross-document lookups, and specific fact retrieval. Then I threw three very different search engines at it.</p>
+<h3 id="1-litesearch-pure-semantic-vector-search">1. litesearch — Pure Semantic Vector Search<a class="headerlink" href="#1-litesearch-pure-semantic-vector-search" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/AstraBert/litesearch">litesearch</a> is a young project (65 stars, 4 commits at the time I tested it) that takes the pure embedding approach. It chunks your documents, embeds them with <code>nomic-embed-text-v1.5</code> (a 768-dimensional model), stores them in a local Qdrant Edge database, and searches by cosine similarity.</p>
+<p><strong>The idea:</strong> "Forget keywords. Just find chunks of text that <em>mean</em> the same thing as your query."</p>
+<h3 id="2-an-agentic-search-cli-built-from-scratch">2. An Agentic Search CLI (Built from Scratch)<a class="headerlink" href="#2-an-agentic-search-cli-built-from-scratch" title="Permanent link">&para;</a></h3>
+<p>Nothing small enough existed for this, so I built a ~300-line Python CLI that uses Ollama as a local LLM brain. It has four tools available to it:</p>
+<ul>
+<li><code>search_semantic</code> — KNN vector search over embedded chunks</li>
+<li><code>grep_files</code> — exact text pattern matching</li>
+<li><code>read_section</code> — read specific line ranges from documents</li>
+<li><code>list_documents</code> — see what's indexed</li>
+</ul>
+<p>The LLM (qwen3.5 running locally) decides which tools to call, refines its queries, reads context around matches, and synthesizes an answer with cited quotes.</p>
+<p><strong>The idea:</strong> "Let an AI <em>reason</em> about what to search for, not just retrieve blindly."</p>
+<h3 id="3-ck-hybrid-bm25-vector-search">3. ck — Hybrid BM25 + Vector Search<a class="headerlink" href="#3-ck-hybrid-bm25-vector-search" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/BeaconBay/ck">ck</a> is a Rust binary that combines two search paradigms: BM25 keyword search (via tantivy, the Rust search engine library) and vector embedding search (via bge-small-en-v1.5). It merges results using Reciprocal Rank Fusion — if a passage scores highly in <em>both</em> systems, it gets boosted to the top.</p>
+<p><strong>The idea:</strong> "Combine the precision of keywords with the understanding of semantics."</p>
+<h2 id="the-results">The Results<a class="headerlink" href="#the-results" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>litesearch</th>
+<th>agentic (semantic)</th>
+<th>agentic (LLM)</th>
+<th>ck (hybrid)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Median query time</strong></td>
+<td>636ms</td>
+<td>4,669ms</td>
+<td>59,490ms</td>
+<td><strong>195ms</strong></td>
+</tr>
+<tr>
+<td><strong>Hit rate</strong></td>
+<td>70%</td>
+<td><strong>90%</strong></td>
+<td>40%</td>
+<td>70%</td>
+</tr>
+</tbody>
+</table>
+<p>Three things jumped out immediately:</p>
+<h3 id="speed-ck-destroys-everything-else">Speed: ck Destroys Everything Else<a class="headerlink" href="#speed-ck-destroys-everything-else" title="Permanent link">&para;</a></h3>
+<p>195 milliseconds. That's perceptibly instant. You type a query, you get results before your finger leaves the Enter key. litesearch was 3x slower, the semantic-only search was 24x slower (mostly cold-start loading the embedding model), and the LLM agent took almost a <em>minute</em> per query.</p>
+<p>The difference is architectural. ck is a compiled Rust binary with an inverted index already memory-mapped. litesearch loads an ONNX embedding model per query. The Python semantic search loads PyTorch's sentence-transformers from scratch every time. A persistent daemon would fix the Python cold-start, but ck doesn't even need one.</p>
+<h3 id="the-llm-agent-was-the-worst-performer">The LLM Agent Was the Worst Performer<a class="headerlink" href="#the-llm-agent-was-the-worst-performer" title="Permanent link">&para;</a></h3>
+<p>This was the surprising one. I expected the agentic approach — an LLM that can reason about what to search for, refine queries, combine semantic and keyword results — to produce the best results. Instead, it had a 40% hit rate and took 55 seconds per query.</p>
+<p>Why? Two reasons:</p>
 <ol>
-<li>"Design a basic data structure for quiz questions and answers"</li>
-<li>"Create a function to load and parse quiz questions from a JSON file" </li>
-<li>"Build a simple command-line interface to display questions and accept user input"</li>
-<li>"Add scoring logic to track correct/incorrect answers"</li>
-<li>"Implement a way to save quiz results and show final score"</li>
+<li>
+<p><strong>Speed kills reasoning.</strong> qwen3.5 at 6.6GB is a "thinking" model. It spends tokens on internal reasoning, leaving less budget for actually answering. At 55 seconds per query, the model is doing 5-10 tool calls, each with a round-trip to Ollama.</p>
+</li>
+<li>
+<p><strong>Measurement artifact.</strong> The benchmark checks whether expected source filenames appear in the output. The LLM agent often found the right content but paraphrased the source instead of citing the exact filename. When I read the actual outputs manually, the answers were often excellent — richly cited with quotes and context. The <em>quality</em> was highest, even if the automated metric didn't capture it.</p>
+</li>
 </ol>
-<p>Something like that where you prompt in small pieces and for each you supervise the result and incrementally grow into the final result you were looking for.</p>
-<p>This is a perfect segway to my next tip.</p>
-<h2 id="use-llms-as-assistants-not-as-replacements"><strong>Use LLMs as assistants not as replacements</strong><a class="headerlink" href="#use-llms-as-assistants-not-as-replacements" title="Permanent link">&para;</a></h2>
-<p>Don't treat whatever is generated with an AI as the final all might output.
-Treat everything you get from it critically, which I know can sound a bit contradictory given the nature of why we are using LLMs right? We are using it so we don't have to do the work. However, this approach can only lead to hours of mindless debugging and absolute dread. </p>
-<p>Instead, treat the model like the great <a href="https://simonwillison.net/">Simon Willison</a> puts it in this <a href="https://www.youtube.com/watch?v=uRuLgar5XZw&amp;t=78s">youtube video</a> where he mentions you should treat them as "smart interns" that "read through all the documentation" and can help 24/7.</p>
-<blockquote>
-<p><a href="https://www.youtube.com/watch?v=uRuLgar5XZw&amp;t=78s">I think you should use them as supporting like tools to support support the decisions that you're making... - Simon Willison </a></p>
-</blockquote>
-<h2 id="ask-for-multiple-options"><strong>Ask for Multiple Options</strong><a class="headerlink" href="#ask-for-multiple-options" title="Permanent link">&para;</a></h2>
-<p>Specially for tought questions, don't ask the models for one answer, ask for many and pick the ones that looks best.</p>
-<h2 id="use-it-to-explore-and-not-just-for-quick-answers"><strong>Use it to Explore and Not Just for Quick Answers</strong><a class="headerlink" href="#use-it-to-explore-and-not-just-for-quick-answers" title="Permanent link">&para;</a></h2>
-<p>Do side projects with these tools and explore what they can do instead of 
-relying on them just as a google search replacement.</p>
-<h2 id="explore-and-experiment"><strong>Explore and Experiment</strong><a class="headerlink" href="#explore-and-experiment" title="Permanent link">&para;</a></h2>
-<p>When working with AI tools, it's important to approach them with a spirit of exploration and experimentation rather than just using them for quick answers. Here are some key ways to do this:</p>
-<p>Challenge yourself to do complete projects using AI tools. As one developer put it: <em>"If you can afford to do a side project with these tools and like set yourself a challenge to write every line of code with these tools, I think that's a great thing you can do."</em></p>
+<h3 id="direct-semantic-search-beat-the-llm-agent">Direct Semantic Search Beat the LLM Agent<a class="headerlink" href="#direct-semantic-search-beat-the-llm-agent" title="Permanent link">&para;</a></h3>
+<p>The "dumb" approach — just embed the query and find the nearest neighbors — achieved 90% hit rate. No reasoning, no query refinement, no multi-step tool calling. Just brute-force cosine similarity over 11,000 embeddings.</p>
+<p>This is a useful lesson: for a personal knowledge base of a few thousand documents, sophisticated reasoning adds latency without improving retrieval. The embedding space is small enough that KNN search is already very accurate. The LLM's intelligence only adds value when you need multi-hop reasoning across documents.</p>
+<h2 id="the-per-query-breakdown">The Per-Query Breakdown<a class="headerlink" href="#the-per-query-breakdown" title="Permanent link">&para;</a></h2>
+<p>This is where it gets interesting. Each engine has a different failure mode:</p>
+<table>
+<thead>
+<tr>
+<th>Query</th>
+<th>ck</th>
+<th>litesearch</th>
+<th>semantic</th>
+<th>LLM agent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"cognitive endurance" (exact phrase)</td>
+<td>HIT</td>
+<td>HIT</td>
+<td>HIT</td>
+<td>HIT</td>
+</tr>
+<tr>
+<td>"strategies for effective practice and drilling" (conceptual)</td>
+<td>HIT</td>
+<td>MISS</td>
+<td>HIT</td>
+<td>MISS</td>
+</tr>
+<tr>
+<td>"Bellman equation value function" (technical term)</td>
+<td>MISS</td>
+<td>HIT</td>
+<td>HIT</td>
+<td>MISS</td>
+</tr>
+<tr>
+<td>"LLMs to improve student learning" (cross-document)</td>
+<td>MISS</td>
+<td>MISS</td>
+<td>HIT</td>
+<td>HIT</td>
+</tr>
+<tr>
+<td>"vibe coding vs AI programming" (specific fact)</td>
+<td>MISS</td>
+<td>MISS</td>
+<td>MISS</td>
+<td>MISS</td>
+</tr>
+</tbody>
+</table>
+<p>The pattern: <strong>ck excels at queries that contain keywords present in the text.</strong> It missed "Bellman equation" because the notes use different phrasing. <strong>litesearch and semantic search excel at conceptual matching</strong> — finding "drilling strategies" when the document says "optimal drilling to learn." <strong>The LLM agent excels at cross-document synthesis</strong> — finding "LLMs for student learning" across multiple notes that each cover part of the answer.</p>
+<p>And everyone missed "vibe coding vs AI programming" because the actual note title is "vibe coding vs ai assisted programming" — the word "assisted" matters more than you'd think to embedding models.</p>
+<h2 id="what-im-actually-using-now">What I'm Actually Using Now<a class="headerlink" href="#what-im-actually-using-now" title="Permanent link">&para;</a></h2>
+<p>I wrapped ck in a shell script called <code>docsearch</code> and aliased it globally. My daily workflow:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Quick search from anywhere</span>
+docsearch<span class="w"> </span><span class="s2">&quot;context engineering RAG&quot;</span>
+
+<span class="c1"># Interactive browsing (fzf-like TUI)</span>
+docsearch<span class="w"> </span>tui
+
+<span class="c1"># Add a new paper</span>
+docsearch<span class="w"> </span>add<span class="w"> </span>~/Downloads/new-paper.pdf
+</code></pre></div>
+<p>The wrapper handles PDF-to-markdown conversion automatically (using pymupdf4llm), manages the corpus directory, and sets the right Rust toolchain PATH. 195ms queries, hybrid search, zero cloud dependencies.</p>
+<p>For deep research questions where I need to find and synthesize across multiple documents, I still fall back to the semantic search approach. But for 90% of my daily "where did I write that?" moments, ck is perfect.</p>
+<h2 id="the-takeaway">The Takeaway<a class="headerlink" href="#the-takeaway" title="Permanent link">&para;</a></h2>
+<p>If you're building local document search:</p>
+<ol>
+<li><strong>Start with hybrid search (BM25 + vector).</strong> Pure semantic misses exact terms. Pure keyword misses meaning. Hybrid gets both.</li>
+<li><strong>Don't overthink it with LLM agents</strong> for retrieval. They're great for synthesis and reasoning, but for finding passages, a good embedding model + fast index is faster and more reliable.</li>
+<li><strong>Speed matters more than you think.</strong> The difference between 200ms and 5 seconds isn't just comfort — it changes whether you actually use the tool. A 200ms search becomes a reflex. A 5-second search becomes "maybe I'll just scroll through my notes instead."</li>
+<li><strong>Pre-convert PDFs to markdown.</strong> Every tool handles plain text well. PDF parsing is where things break. Convert once, search forever.</li>
+</ol>
+<p>The full experiment code, benchmark runner, and docsearch wrapper are all in a single repo if you want to reproduce this. Every search runs 100% locally — your notes never leave your machine.</p>
 
 
 
