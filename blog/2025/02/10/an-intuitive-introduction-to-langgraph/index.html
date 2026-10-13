@@ -1271,7 +1271,7 @@ with LLMs like:</p>
 <span class="kn">from</span><span class="w"> </span><span class="nn">langchain_anthropic</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChatAnthropic</span>
 
 <span class="c1"># The LLM</span>
-<span class="n">llm</span> <span class="o">=</span> <span class="n">ChatAnthropic</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;claude-3-5-sonnet-latest&quot;</span><span class="p">)</span>
+<span class="n">llm</span> <span class="o">=</span> <span class="n">ChatAnthropic</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">"claude-3-5-sonnet-latest"</span><span class="p">)</span>
 <span class="c1"># The tool (for web search)</span>
 <span class="n">search_tool</span> <span class="o">=</span> <span class="n">TavilySearchResults</span><span class="p">()</span>
 <span class="c1"># Connect LLM to tool </span>
@@ -1294,19 +1294,19 @@ of this graph.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># The node where the LLM+tools is called</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">llm_node</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">MessagesState</span><span class="p">):</span>
     <span class="c1"># Gets the latest message in the messages list</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="n">llm_with_tools</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="s2">&quot;messages&quot;</span><span class="p">])</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;response&quot;</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">llm_with_tools</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="s2">"messages"</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"response"</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
     <span class="c1"># returns a dictionary that corresponds to updating the state</span>
-    <span class="c1"># adding a the message from the model&#39;s response</span>
-    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">response</span><span class="p">]}</span>
+    <span class="c1"># adding a the message from the model's response</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">"messages"</span><span class="p">:</span> <span class="p">[</span><span class="n">response</span><span class="p">]}</span>
 
 <span class="c1"># The node that performs the conditional logic that defines whether the</span>
 <span class="c1"># LLM will call a tool and return a final output to the user </span>
 <span class="k">def</span><span class="w"> </span><span class="nf">router_node</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">MessagesState</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">state</span><span class="p">[</span><span class="s2">&quot;messages&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">tool_calls</span><span class="p">:</span>
-        <span class="c1"># routes to a node called: &quot;tools&quot;</span>
-        <span class="k">return</span> <span class="s2">&quot;tools&quot;</span>
+    <span class="k">if</span> <span class="n">state</span><span class="p">[</span><span class="s2">"messages"</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">tool_calls</span><span class="p">:</span>
+        <span class="c1"># routes to a node called: "tools"</span>
+        <span class="k">return</span> <span class="s2">"tools"</span>
 
     <span class="c1"># if there is no action required, we end the loop</span>
     <span class="k">return</span> <span class="n">END</span>
@@ -1319,18 +1319,18 @@ get's executed.</p>
 <div class="highlight"><pre><span></span><code><span class="n">builder</span> <span class="o">=</span> <span class="n">StateGraph</span><span class="p">(</span><span class="n">MessagesState</span><span class="p">)</span>
 </code></pre></div>
 <p>We integrate the nodes we've created earlier:
-<div class="highlight"><pre><span></span><code><span class="n">builder</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;llm&quot;</span><span class="p">,</span> <span class="n">llm_node</span><span class="p">)</span>
-<span class="n">builder</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;tools&quot;</span><span class="p">,</span> <span class="n">tool_node</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">builder</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"llm"</span><span class="p">,</span> <span class="n">llm_node</span><span class="p">)</span>
+<span class="n">builder</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"tools"</span><span class="p">,</span> <span class="n">tool_node</span><span class="p">)</span>
 </code></pre></div></p>
 <p>We set an entry point for the graph
 <div class="highlight"><pre><span></span><code><span class="c1"># we set the entry point for the graph to be the llm</span>
 <span class="c1"># which means the user will send the input directly to the LLM</span>
-<span class="n">builder</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">START</span><span class="p">,</span> <span class="s2">&quot;llm&quot;</span><span class="p">)</span>
+<span class="n">builder</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">START</span><span class="p">,</span> <span class="s2">"llm"</span><span class="p">)</span>
 </code></pre></div>
 Connect the llm to the function containing the conditional logic that routes information either to the user (END) or to the node containing the tools, and compile the graph.</p>
-<div class="highlight"><pre><span></span><code><span class="n">builder</span><span class="o">.</span><span class="n">add_conditional_edges</span><span class="p">(</span><span class="s2">&quot;llm&quot;</span><span class="p">,</span> <span class="n">router_node</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;tools&quot;</span><span class="p">,</span> <span class="n">END</span><span class="p">])</span>
-<span class="c1"># Here we make it so that the output of the tools node has to go to the &quot;llm&quot;</span>
-<span class="n">builder</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;tools&quot;</span><span class="p">,</span> <span class="s2">&quot;llm&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">builder</span><span class="o">.</span><span class="n">add_conditional_edges</span><span class="p">(</span><span class="s2">"llm"</span><span class="p">,</span> <span class="n">router_node</span><span class="p">,</span> <span class="p">[</span><span class="s2">"tools"</span><span class="p">,</span> <span class="n">END</span><span class="p">])</span>
+<span class="c1"># Here we make it so that the output of the tools node has to go to the "llm"</span>
+<span class="n">builder</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"tools"</span><span class="p">,</span> <span class="s2">"llm"</span><span class="p">)</span>
 
 <span class="n">graph</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">compile</span><span class="p">()</span>
 </code></pre></div>
@@ -1339,14 +1339,14 @@ Connect the llm to the function containing the conditional logic that routes inf
     <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">get_graph</span><span class="p">()</span><span class="o">.</span><span class="n">draw_mermaid_png</span><span class="p">()))</span>
 <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
     <span class="c1"># This requires some extra dependencies and is optional</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Did not display graph&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Did not display graph"</span><span class="p">)</span>
     <span class="k">pass</span>
 </code></pre></div>
 <img alt="" src="../../../../assets/react-agent-graph.jpeg" /></p>
 <p>Looks pretty simple right? But now, we can actually have it look up information online and return written results!</p>
 <div class="highlight"><pre><span></span><code><span class="n">graph</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span>
     <span class="p">{</span>
-        <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;human&quot;</span><span class="p">,</span> <span class="s2">&quot;Search online for current AI conferences happening in Silicon Valley right now.&quot;</span><span class="p">]</span>
+        <span class="s2">"messages"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"human"</span><span class="p">,</span> <span class="s2">"Search online for current AI conferences happening in Silicon Valley right now."</span><span class="p">]</span>
     <span class="p">}</span>
 <span class="p">)</span>
 </code></pre></div>

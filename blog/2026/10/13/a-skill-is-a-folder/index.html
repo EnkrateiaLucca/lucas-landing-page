@@ -1,0 +1,1467 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://enkrateialucca.github.io/lucas-landing-page/blog/2026/10/13/a-skill-is-a-folder/">
+      
+      
+        <link rel="prev" href="../../../04/12/building-a-local-document-search-engine/">
+      
+      
+      
+        
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>A skill is a folder that the agent reads in three steps - Lucas Soares</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../style.css?v=20260814">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#a-skill-is-a-folder-that-the-agent-reads-in-three-steps" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="Lucas Soares" class="md-header__button md-logo" aria-label="Lucas Soares" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lucas Soares
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              A skill is a folder that the agent reads in three steps
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/EnkrateiaLucca/lucas-landing-page.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Writing
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../courses/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Courses
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../corporate-training/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Corporate Trainings
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Lucas Soares" class="md-nav__button md-logo" aria-label="Lucas Soares" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Lucas Soares
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/EnkrateiaLucca/lucas-landing-page.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Writing
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Writing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archive
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Categories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Categories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ai-best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Best Practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ai-tools--workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Tools &amp; Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/building-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building Agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/llm-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/personal-journey--reflections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personal Journey &amp; Reflections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/software-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/technical-guides/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Guides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../courses/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Courses
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Courses
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Corporate Trainings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Corporate Trainings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../corporate-training/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Corporate AI Training
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-10-13 00:00:00+00:00" class="md-ellipsis">Oct 13, 2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/ai-best-practices/">AI Best Practices</a>, 
+                              <a href="../../../../category/technical-guides/">Technical Guides</a>, 
+                              <a href="../../../../category/llm-development/">LLM Development</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              8 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+            
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#two-folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two folders
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-bigger-folder-makes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the bigger folder makes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-three-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The three steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-most-of-a-skill-costs-nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why most of a skill costs nothing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why most of a skill costs nothing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-script-costs-only-its-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A script costs only its output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measure-what-your-own-skills-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Measure what your own skills cost
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#back-to-the-prediction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Back to the prediction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-a-skill-must-contain-and-where-it-lives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a skill must contain, and where it lives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pick-a-task-that-earns-a-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pick a task that earns a skill
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+
+  
+  
+
+
+<h1 id="a-skill-is-a-folder-that-the-agent-reads-in-three-steps">A skill is a folder that the agent reads in three steps<a class="headerlink" href="#a-skill-is-a-folder-that-the-agent-reads-in-three-steps" title="Permanent link">&para;</a></h1>
+<p>You have 40 skills installed in Claude Code. You open a new session and type nothing. How much of the context window do those 40 skills use already?</p>
+<p>Write down a number before you read on, in tokens or as a percentage of the window. A rough guess is fine. The end of this post comes back to it.</p>
+<!-- more -->
+
+<p>The usual definition says a skill is a folder that holds a SKILL.md file. That definition is true and too small. It says nothing about the order in which the agent reads the folder. The order decides what a skill costs.</p>
+<p>This post takes apart two skills from my own <code>~/.claude/skills/</code> folder. <code>explain-simply</code> is a single file. <code>video-guide</code> turns a link to a software tutorial into a PDF with one annotated screenshot per click, and I run it almost every week.</p>
+<h2 id="two-folders">Two folders<a class="headerlink" href="#two-folders" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>explain-simply/
+└── SKILL.md                            46 lines
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>video-guide/
+├── SKILL.md                           109 lines
+├── README.md                          100 lines
+├── LICENSE                             22 lines
+├── scripts/
+│   └── video_guide.py                 431 lines
+├── references/
+│   ├── steps-schema.md                 53 lines
+│   ├── example-steps.json             150 lines
+│   └── transcription.md                17 lines
+├── evals/
+│   └── evals.json                      56 lines
+└── examples/
+    └── excel-pivot-table-guide.pdf     the sample guide
+</code></pre></div>
+<p>One skill has 46 lines. The other has 938 lines of text plus a PDF. I use both.</p>
+<h2 id="what-the-bigger-folder-makes">What the bigger folder makes<a class="headerlink" href="#what-the-bigger-folder-makes" title="Permanent link">&para;</a></h2>
+<p>I gave <code>video-guide</code> a 3-minute YouTube tutorial, "Pivot Tables Explained in 3 Minutes" from the Excel Campus channel. This is the cover of the PDF it returned, and one page of steps:</p>
+<p><img alt="Cover page of the PDF guide that video-guide made from the Excel pivot-table tutorial" src="../../../../assets/l1-guide-cover.png" /></p>
+<p><img alt="A page of steps from the Excel pivot-table guide, each with an annotated screenshot and Do and Expect lines" src="../../../../assets/l1-guide-steps.png" /></p>
+<p>Four parts of the PDF trace back to files in the tree:</p>
+<ul>
+<li>The red boxes and numbered badges on the screenshots. The <code>render</code> command in <code>scripts/video_guide.py</code> draws them.</li>
+<li>The <strong>Do</strong> and <strong>Expect</strong> lines under each screenshot. Claude writes them from the rules in step 4 of the SKILL.md body and the fields in <code>references/steps-schema.md</code>.</li>
+<li>The intro line on the cover. Line 92 of SKILL.md tells Claude to copy it from <code>references/example-steps.json</code>.</li>
+<li>The quick reference and the agent notes on the last page. Line 93 of SKILL.md asks for them.</li>
+</ul>
+<h2 id="the-three-steps">The three steps<a class="headerlink" href="#the-three-steps" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>The listing, always.</strong> When a session starts, Claude Code reads the frontmatter of every installed skill. The <code>name</code> and <code>description</code> go into a listing that Claude sees on every request. Anthropic's docs estimate about 100 tokens per skill (<a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview">overview</a>).</li>
+<li><strong>The body, when the skill fires.</strong> Claude compares your request with the descriptions in the listing. When one matches, Claude Code loads the body of that SKILL.md, plus a line with the path to the skill's folder. The body stays in the conversation for the rest of the session, and Claude does not re-read it on later turns (<a href="https://code.claude.com/docs/en/skills">skills docs</a>). The docs suggest a body under 5k tokens and under 500 lines. <code>video-guide</code> has 109 lines.</li>
+<li><strong>Files, when a step asks.</strong> References, scripts and assets cost zero tokens until a step points Claude at one. The <code>video-guide</code> body points at its four bundled files in four lines (8, 22, 50 and 85). Files with no pointer stay on disk.</li>
+</ol>
+<p>To test yourself, label each file in the <code>video-guide</code> tree before you read the table below. Use <strong>A</strong> for always, <strong>F</strong> for when the skill fires and <strong>S</strong> for only when a step asks for it. A few files fit none of the three. SKILL.md gets two labels, one for its frontmatter and one for its body.</p>
+<p>You can check the labels with <code>grep</code>. I searched the <code>video-guide</code> SKILL.md for the names of the other files:</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-n<span class="w"> </span>-o<span class="w"> </span>-E<span class="w"> </span><span class="s1">'(references|scripts|evals|examples)/[a-z_.-]+|README|LICENSE'</span><span class="w"> </span>video-guide/SKILL.md
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>8:references/example-steps.json
+22:scripts/video_guide.py
+22:scripts/video_guide.py
+50:references/transcription.md
+85:references/steps-schema.md
+85:references/example-steps.json
+</code></pre></div>
+<p>The number before each colon is a line in SKILL.md. Each of those four lines points Claude at the files it names. No step sends Claude to a file the body never names. The same <code>grep</code> on <code>explain-simply/SKILL.md</code> prints nothing.</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>When Claude reads it</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>explain-simply/SKILL.md</code>, frontmatter (lines 1–4)</td>
+<td>A</td>
+<td>The listing holds every skill's name and description.</td>
+</tr>
+<tr>
+<td><code>explain-simply/SKILL.md</code>, body (42 lines)</td>
+<td>F</td>
+<td>It loads when a request matches the description.</td>
+</tr>
+<tr>
+<td><code>video-guide/SKILL.md</code>, frontmatter (lines 1–4)</td>
+<td>A</td>
+<td>Same as above.</td>
+</tr>
+<tr>
+<td><code>video-guide/SKILL.md</code>, body (105 lines)</td>
+<td>F</td>
+<td>Same as above.</td>
+</tr>
+<tr>
+<td><code>references/example-steps.json</code></td>
+<td>S</td>
+<td>Line 8 names it as the reference result to match. Line 85 sends Claude to it at step 4.</td>
+</tr>
+<tr>
+<td><code>scripts/video_guide.py</code></td>
+<td>S</td>
+<td>Line 22 tells Claude how to run it. Claude runs it and reads the output. The code stays unread.</td>
+</tr>
+<tr>
+<td><code>references/transcription.md</code></td>
+<td>S</td>
+<td>Line 50 sends Claude there only when the narration carries steps the screen does not show.</td>
+</tr>
+<tr>
+<td><code>references/steps-schema.md</code></td>
+<td>S</td>
+<td>Line 85: "Read <code>references/steps-schema.md</code> for the fields and <code>references/example-steps.json</code> for density and tone."</td>
+</tr>
+<tr>
+<td><code>README.md</code>, <code>LICENSE</code></td>
+<td>–</td>
+<td>Written for the person who installs the skill.</td>
+</tr>
+<tr>
+<td><code>evals/evals.json</code></td>
+<td>–</td>
+<td>Test cases for the skill's author.</td>
+</tr>
+<tr>
+<td><code>examples/excel-pivot-table-guide.pdf</code></td>
+<td>–</td>
+<td>A sample for you to read.</td>
+</tr>
+</tbody>
+</table>
+<p>The script gets an <strong>S</strong>. Claude runs it without reading its 431 lines of code.</p>
+<h2 id="why-most-of-a-skill-costs-nothing">Why most of a skill costs nothing<a class="headerlink" href="#why-most-of-a-skill-costs-nothing" title="Permanent link">&para;</a></h2>
+<p>You might picture every installed skill sitting in the context window all the time. Only the listing entry sits there. The body loads only after a match. The references, the assets and the script code load only when a step needs them, and some files never load at all. In Claude Code even the listing entry can shrink to a bare name.</p>
+<p>Before it fires, a skill costs its listing entry and nothing else. The length of the description sets that cost. <code>explain-simply</code> has a 462-character description. <code>video-guide</code> has an 899-character description. Its script and its 220 lines of references add nothing until a step uses them. On my machine a test skill with a 117-character description cost about 40 tokens in the listing. The longest description that kept its place cost about 480.</p>
+<p>After it fires, a small skill stays cheap. <code>explain-simply</code> adds a 42-line body and has nothing else to load. <code>video-guide</code> adds 105 lines, then pulls in a reference or a script output at the step that needs it.</p>
+<h3 id="a-script-costs-only-its-output">A script costs only its output<a class="headerlink" href="#a-script-costs-only-its-output" title="Permanent link">&para;</a></h3>
+<p>Claude runs a bundled script through bash, and only the script's output enters the context (<a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview">overview</a>). <code>video_guide.py</code> has 431 lines of Python. When Claude runs its <code>check</code> command, Claude reads seven lines. This is what <code>check</code> printed on my Mac:</p>
+<div class="highlight"><pre><span></span><code>ok  ffmpeg 9.0.2
+ok  ffprobe 9.0.2
+ok  weasyprint 70.0
+ok  pdftoppm 26.10.0
+ok  deno 2.9.7
+ok  pillow 12.3.0
+ok  yt-dlp 2026.8.19
+</code></pre></div>
+<p>Those seven lines are the whole cost. For this reason the script does the repetitive work of <code>video-guide</code>. It downloads the video, cuts frames, draws boxes and builds the PDF.</p>
+<h2 id="measure-what-your-own-skills-cost">Measure what your own skills cost<a class="headerlink" href="#measure-what-your-own-skills-cost" title="Permanent link">&para;</a></h2>
+<p>Run this in a terminal (tested with Claude Code 2.1.283, October 2026):</p>
+<div class="highlight"><pre><span></span><code>claude<span class="w"> </span>-p<span class="w"> </span><span class="s2">"/context"</span><span class="w"> </span>&gt;<span class="w"> </span>context.txt
+grep<span class="w"> </span><span class="s2">"| Skills"</span><span class="w"> </span>context.txt
+grep<span class="w"> </span>-c<span class="w"> </span><span class="s2">"&lt; 20"</span><span class="w"> </span>context.txt
+</code></pre></div>
+<p>The first <code>grep</code> prints the Skills row: the tokens that your skills' names and descriptions use, and their share of the context window. The second counts the rows that show <code>&lt; 20</code> tokens. My Skills row, on Sonnet with a 1M-token window:</p>
+<div class="highlight"><pre><span></span><code>| Skills | 9.9k | 1.0% |
+</code></pre></div>
+<p>My count was 263, out of 310 skills. Open <code>context.txt</code> and scroll to the <code>### Skills</code> table to see one row per skill. Three of my rows:</p>
+<div class="highlight"><pre><span></span><code>| anki | User | ~390 |
+| explain-simply | User | &lt; 20 |
+| video-guide | User | &lt; 20 |
+</code></pre></div>
+<p><code>/context</code> also works inside a session. <code>/skills</code> lists every skill, and pressing <kbd>t</kbd> sorts the list by token count (<a href="https://code.claude.com/docs/en/commands">commands docs</a>).</p>
+<h2 id="back-to-the-prediction">Back to the prediction<a class="headerlink" href="#back-to-the-prediction" title="Permanent link">&para;</a></h2>
+<p>Anthropic's estimate is about 100 tokens per skill, so 40 skills come to about 4,000 tokens. That is 0.4% of a 1M-token window.</p>
+<p>Claude Code also caps the listing at 1% of the context window. When the descriptions do not fit, it keeps every name and drops the descriptions of the skills you use least (<a href="https://code.claude.com/docs/en/settings-reference">settings reference</a>). On a 200k-token window, 1% is 2,000 tokens. Forty descriptions at 100 tokens each already pass that cap.</p>
+<p>If you guessed a few thousand tokens, you were close. If you guessed tens of thousands, you pictured whole SKILL.md files in the context.</p>
+<p>My own numbers (tested with Claude Code 2.1.283, October 2026): 310 skills in the listing, a Skills row of 9.9k tokens, 1.0% of Sonnet's 1M window. The row sat at the cap. Claude Code had cut the descriptions of 263 skills and kept only their names. <code>video-guide</code> was one of the 263, even though I run it almost every week.</p>
+<p>The listing costs tokens, and it has a cap. Past the cap, a skill keeps its name and loses the description Claude matches requests against. Claude then sees <code>video-guide</code> without "even if they never say PDF" or any other trigger phrase. When a skill stops firing on a machine with many skills, check <code>/context</code> or <code>/skills</code> first. The cap may have cut its description.</p>
+<h2 id="what-a-skill-must-contain-and-where-it-lives">What a skill must contain, and where it lives<a class="headerlink" href="#what-a-skill-must-contain-and-where-it-lives" title="Permanent link">&para;</a></h2>
+<p>SKILL.md is the only required file. <code>scripts/</code>, <code>references/</code> and <code>assets/</code> are optional, and a skill has them only when its job needs them (<a href="https://agentskills.io/specification">spec</a>). The open spec requires <code>name</code> and <code>description</code> in the frontmatter, and <code>name</code> must match the folder name. Claude Code requires neither field. It takes the folder name as the name. Without a description it uses the first non-empty line of the body.</p>
+<p>Write both anyway. The name and the description are all Claude sees before the skill fires. Anthropic's docs say the description <a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview">"must include both what the Skill does and when Claude should use it."</a></p>
+<p>The folder's location decides where the skill works. <code>~/.claude/skills/&lt;name&gt;/</code> works in every project on your machine. <code>.claude/skills/&lt;name&gt;/</code> inside a repo works in that project. A plugin carries its own <code>skills/</code> folder. The docs list a few more locations, such as enterprise settings and folders added with <code>--add-dir</code>.</p>
+<h2 id="pick-a-task-that-earns-a-skill">Pick a task that earns a skill<a class="headerlink" href="#pick-a-task-that-earns-a-skill" title="Permanent link">&para;</a></h2>
+<p>A task earns a skill when you repeat it and can check its output without doing the task again. A skill runs many steps while you are not watching. If the only way to check its output is to do the task yourself, the skill saves you nothing.</p>
+<p>List three tasks you repeat each week that end in an output you can check. Write the input, the output and the check for each one. Two from my own list:</p>
+<ul>
+<li><strong>Research report.</strong> Input: a topic. Output: an HTML report in which every citation is a deep link to the passage it cites. Check: I click a citation and land on the paragraph.</li>
+<li><strong>Quiz before cards.</strong> Input: a paper I just read. Output: a quiz score, then Anki cards for the questions I missed. Check: every card traces back to a wrong answer. I only make cards for the holes now.</li>
+</ul>
+<p><code>video-guide</code> fits the same pattern. The input is a tutorial link and the output is a PDF. I check it by following the PDF in the app with the video closed.</p>
+<p>This post is the free first lesson of my course <a href="https://www.automatalearninglab.com/courses/agent-skills-field-guide">Agent Skills Field Guide</a>. In lessons 2 to 6 you install <code>video-guide</code>, make the same pivot-table guide on your own machine, and then build and test your own skill from one task on your list.</p>
+<hr />
+<p><a class="md-button md-button--primary" href="https://automata-learning-lab.kit.com/ccd5287996">Subscribe to my Newsletter</a>
+<a class="md-button md-button--secondary" href="https://www.youtube.com/@automatalearninglab">Subscribe to my YouTube</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

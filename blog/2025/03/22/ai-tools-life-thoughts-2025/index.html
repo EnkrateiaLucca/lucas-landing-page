@@ -1268,7 +1268,7 @@ However, I tend to leave these silly little projects behind...but at least I wro
 </ol>
 <p>There are so many more but I think those are enough to pain the picture of the mess that is my 'random-apps' folder. Some of them were built with <code>aider</code> some with the new <a href="https://github.com/anthropics/claude-code"><code>claude-code</code></a>, all of them were built kind of without strong intentions, just as a exercise on chaotic experimentation.</p>
 <p>Now, one last note I'll say on this topic is the revolutionary change on my workflow and day-to-day by integrating llms in the terminal using SImon Willison's <a href="https://github.com/simonw/llm">LLM-CLI</a>. I can now write commands like:</p>
-<p><div class="highlight"><pre><span></span><code>`for f in *.txt; do echo ${f%.txt}.pdf &gt;&gt; file_classification.txt; cat $f | llm &#39;Give this file a one sentence description&#39; &gt;&gt; file_classification.txt
+<p><div class="highlight"><pre><span></span><code>`for f in *.txt; do echo ${f%.txt}.pdf &gt;&gt; file_classification.txt; cat $f | llm 'Give this file a one sentence description' &gt;&gt; file_classification.txt
 </code></pre></div>
 Which for me, has been the most fun I've had with AI besides what I'm about to tell you in the end of this article ;) .</p>
 <hr />

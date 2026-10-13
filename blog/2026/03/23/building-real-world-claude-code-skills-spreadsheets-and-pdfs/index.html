@@ -1389,22 +1389,22 @@
 <h3 id="confidence-scoring-as-a-first-class-output">Confidence Scoring as a First-Class Output<a class="headerlink" href="#confidence-scoring-as-a-first-class-output" title="Permanent link">&para;</a></h3>
 <p>Every extracted field comes with confidence metadata:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;vendor_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apex Manufacturing&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;_confidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;vendor_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;high&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Single occurrence in document header&quot;</span>
+<span class="w">  </span><span class="nt">"vendor_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Apex Manufacturing"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"_confidence"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"vendor_name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"high"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Single occurrence in document header"</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;high&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Single &#39;Total&#39; label, matches subtotal + tax&quot;</span>
+<span class="w">    </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"high"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Single 'Total' label, matches subtotal + tax"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;_validation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;line_item_sum_check&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pass&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;date_sanity_check&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pass&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;required_fields_check&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pass&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;warnings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">  </span><span class="nt">"_validation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"line_item_sum_check"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"date_sanity_check"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"required_fields_check"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"warnings"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -1458,8 +1458,8 @@
 <h3 id="python-scripts-via-uv-run">Python Scripts via <code>uv run</code><a class="headerlink" href="#python-scripts-via-uv-run" title="Permanent link">&para;</a></h3>
 <p>Both PDF operations (extract and merge/split) use Python helper scripts with <a href="https://peps.python.org/pep-0723/">PEP 723 inline metadata</a>:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># /// script</span>
-<span class="c1"># requires-python = &quot;&gt;=3.12&quot;</span>
-<span class="c1"># dependencies = [&quot;pymupdf&gt;=1.25.0&quot;]</span>
+<span class="c1"># requires-python = "&gt;=3.12"</span>
+<span class="c1"># dependencies = ["pymupdf&gt;=1.25.0"]</span>
 <span class="c1"># ///</span>
 </code></pre></div>
 <p>This means <code>uv run extract_pdf.py invoice.pdf</code> just works — no virtual environment setup, no requirements.txt. The scripts use <strong>pymupdf</strong> specifically because it doesn't re-encode PDF content, preserving fonts, layout, and table structures that the extraction depends on.</p>

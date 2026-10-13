@@ -1818,9 +1818,9 @@ similar approaches can be achieved with any other.</p>
 <p>I love anki flashcards so here we go. Let's talk about some techniques I use on a weekly basis to help memorize all sorts of information.</p>
 <h4 id="1-from-chatgpt-chat-to-anki">1. From ChatGPT Chat to Anki<a class="headerlink" href="#1-from-chatgpt-chat-to-anki" title="Permanent link">&para;</a></h4>
 <p><strong>Prompt:</strong></p>
-<div class="highlight"><pre><span></span><code>&#39;Create {{PUT AMOUNT OF CARDS}} anki flashcards for the content below in the format:
+<div class="highlight"><pre><span></span><code>'Create {{PUT AMOUNT OF CARDS}} anki flashcards for the content below in the format:
 
-    &#39;&#39;&#39;&#39;&#39;&#39;&lt;front content&gt;;&lt;back content&gt;&#39;&#39;&#39;&#39;&#39;&#39;.
+    ''''''&lt;front content&gt;;&lt;back content&gt;''''''.
 
     Try to capture all the main information and craft cards that can encode that effectively.
 
@@ -1936,7 +1936,7 @@ Create **higher‑order multiple‑choice questions** that check genuine compreh
   C) …  
   D) …  
 
-THE OUTPUTS LIKE BELOW SHOULD BE PROVIDED AFTER GETTING THE USER&#39;s answer FIRST:
+THE OUTPUTS LIKE BELOW SHOULD BE PROVIDED AFTER GETTING THE USER's answer FIRST:
   **Answer:** C  
   **Supporting quote (page #, paragraph #):** “Exact ≤ 40‑word excerpt that proves the correct answer.”
 
@@ -1974,14 +1974,14 @@ Now the summary should be about the main topics discussed
 regarding algebraic topology and the structure of the summary
 should follow:
 
-&#39;&#39;&#39;
+'''
 1. {Core idea explanation}
 - youtube link refering to the timestamp that validates the idea
 
 2. {Core idea explanation}
 - youtube link refering to the timestamp that validates the idea
 etc...
-&#39;&#39;&#39;
+'''
 
 to create the youtube links with the right timestamps consider this is the link for the original video:
 {INPUT YOUTUBE LINK}
@@ -1994,9 +1994,9 @@ be as widely available online.</p>
 <p>Search should also serve as validation specially for topics you think might be less available online and therefore the model's training
 might not be able to properly prepare the model to respond.</p>
 <div class="highlight"><pre><span></span><code>  Prompt:
-  &#39;Create {NUMBER OF CARDS} anki flashcards for the content below in the format:
+  'Create {NUMBER OF CARDS} anki flashcards for the content below in the format:
 
-      &#39;&#39;&#39;&#39;&#39;&#39;&lt;front content&gt;;&lt;back content&gt;;source as link if available or reference to doc title or origin&#39;&#39;&#39;&#39;&#39;&#39;.
+      ''''''&lt;front content&gt;;&lt;back content&gt;;source as link if available or reference to doc title or origin''''''.
 
       Try to capture all the main information and craft cards that can encode that effectively.
 
@@ -2059,7 +2059,7 @@ Keep your responses focused and factual, pointing out where my interpretation al
 <ul>
 <li>Compare &amp; Contrast
 <div class="highlight"><pre><span></span><code>Prompt
-I&#39;m studying {X} Prompt me to write a 100‑word paragraph comparing and contrasting {CONCEPT A} and {CONCEPT B}, focusing on purpose, process and outcome. After I answer, supply your own comparison with a three‑bullet improvement checklist.
+I'm studying {X} Prompt me to write a 100‑word paragraph comparing and contrasting {CONCEPT A} and {CONCEPT B}, focusing on purpose, process and outcome. After I answer, supply your own comparison with a three‑bullet improvement checklist.
 </code></pre></div></li>
 </ul>
 <details class="note">
@@ -2103,45 +2103,45 @@ through concrete examples, exercises, and real-world applications.</p>
 <p><div class="highlight"><pre><span></span><code>Prompt: Give me an idea for an experiment I could do to test
 my knowledge of {X}.
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>Prompt: &quot;Generate 3 concrete examples of how &lt;concept&gt; applies in real-world scenarios. 
+<div class="highlight"><pre><span></span><code>Prompt: "Generate 3 concrete examples of how &lt;concept&gt; applies in real-world scenarios. 
 For each example, explain how it demonstrates the core principles
 of {INPUT YOUR TOPIC OF FOCUS}
 </code></pre></div></p>
 <h3 id="exercises">Exercises<a class="headerlink" href="#exercises" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>Prompt: &quot;Create 5 exercises I can use to practice skill {X}.&quot;
+<div class="highlight"><pre><span></span><code>Prompt: "Create 5 exercises I can use to practice skill {X}."
 </code></pre></div>
 <h3 id="study-guide-creation">Study Guide Creation<a class="headerlink" href="#study-guide-creation" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>Prompt: &quot;Create a comprehensive study guide for {TOPIC} that includes:
+<div class="highlight"><pre><span></span><code>Prompt: "Create a comprehensive study guide for {TOPIC} that includes:
 - Key concepts and definitions
 - Practical examples
 - Common misconceptions
 - Practice questions
-- Real-world applications&quot;
+- Real-world applications"
 </code></pre></div>
 <h3 id="contextual-feedback">Contextual Feedback<a class="headerlink" href="#contextual-feedback" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>Prompt: &quot;Review my understanding of {CONCEPT} and provide feedback that:
+<div class="highlight"><pre><span></span><code>Prompt: "Review my understanding of {CONCEPT} and provide feedback that:
 1. Acknowledges my current level of understanding
 2. Points out specific areas for improvement
-3. Suggests practical ways to apply this knowledge&quot;
+3. Suggests practical ways to apply this knowledge"
 </code></pre></div>
 <h3 id="analysis-of-mechanisms">Analysis of Mechanisms<a class="headerlink" href="#analysis-of-mechanisms" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>Prompt: &quot;Explain why {PROCESS/CONCEPT} works the way it does, breaking down:
+<div class="highlight"><pre><span></span><code>Prompt: "Explain why {PROCESS/CONCEPT} works the way it does, breaking down:
 4. The underlying principles
 5. The cause-and-effect relationships
-6. The practical implications&quot;
+6. The practical implications"
 </code></pre></div>
 <h3 id="modification-adaptation">Modification &amp; Adaptation<a class="headerlink" href="#modification-adaptation" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>Prompt: &quot;How would you modify {PROCESS/SYSTEM} to achieve {SPECIFIC GOAL}? 
+<div class="highlight"><pre><span></span><code>Prompt: "How would you modify {PROCESS/SYSTEM} to achieve {SPECIFIC GOAL}? 
 Consider:
 7. Current limitations
 8. Required changes
-9. Potential impacts&quot;
+9. Potential impacts"
 </code></pre></div>
 <h3 id="instruction-development">Instruction Development<a class="headerlink" href="#instruction-development" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>Prompt: &quot;Create a step-by-step guide for {PROCESS/TASK} that:
+<div class="highlight"><pre><span></span><code>Prompt: "Create a step-by-step guide for {PROCESS/TASK} that:
 10. Is clear and actionable
 11. Includes important precautions
-12. Provides examples for each step&quot;
+12. Provides examples for each step"
 </code></pre></div>
 </details>
 <h3 id="analysing-synthesizing">Analysing &amp; Synthesizing<a class="headerlink" href="#analysing-synthesizing" title="Permanent link">&para;</a></h3>
@@ -2176,7 +2176,7 @@ give me feedback on this by contrasting with your own and organizing everything 
 <p>Contrasting Perspectives
   <div class="highlight"><pre><span></span><code>Prompt
 Given context {CONTEXT} I think {YOUR PERSPECTIVE} take an opposing view and argue with me helping me flush out arguments and ideas.
-Let&#39;s work through small debating sessions focused on one topic at a time.
+Let's work through small debating sessions focused on one topic at a time.
 </code></pre></div></p>
 <p>Re-framing (Contrasting &amp; Reflecting)</p>
 <p>Prompt<br />
